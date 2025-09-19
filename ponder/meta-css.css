@@ -11,7 +11,7 @@ body {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px 40px;
-  text-align: center; /* centers most text */
+  text-align: center;
 }
 
 .subtitle {
@@ -31,13 +31,13 @@ hr {
 
 #topics h2 {
   font-weight: bold;
-  text-align: center; /* center the headings */
+  text-align: center;
   margin: 20px 0 10px;
 }
 
 #topics p {
-  max-width: 500px;   /* limit line length */
-  margin: 0 auto 20px; /* center paragraphs */
+  max-width: 500px;
+  margin: 0 auto 20px;
   line-height: 1.5;
 }
 
