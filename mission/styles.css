@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff;
+    text-align: center;
 }
 
 .mission-container {
@@ -33,6 +34,7 @@ h1 {
     text-transform: uppercase; /* all caps */
     letter-spacing: 2px; /* space out letters */
     margin: 0 0 15px 0; /* spacing below */
+    text-align: center;
 }
 
 /* Subtitle */
@@ -47,12 +49,14 @@ h2 {
     color: #006EB6; /* subtitle color */
     margin: 0 0 25px 0; /* spacing below */
     font-size: 20px; /* same as default text */
+    text-align: center;
 }
 
 p, li {
     text-align: left; /* left-align main content */
     margin-bottom: 15px;
     margin: 0 0 15px 0; /* spacing between paragraphs */
+    text-align: center;
 }
 
 /* Italics */
@@ -63,6 +67,7 @@ em {
 ol {
     padding-left: 20px; /* adds space for numbers */
     padding-left: 20px; /* space for numbers */
+    text-align: center;
 }
 
 .logo {
@@ -71,4 +76,5 @@ ol {
     margin: 30px auto 0 auto; /* center and spacing from content */
     width: 150px; /* resize logo */
     height: auto;
+    text-align: center;
 }
