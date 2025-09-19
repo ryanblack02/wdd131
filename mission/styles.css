@@ -1,42 +1,39 @@
-/* Reset default margins and padding */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Full-height layout */
 html, body {
     height: 100%;
-    font-family: "Times New Roman", serif; /* Times New Roman font */
-    font-size: 20px; /* Default font size */
-    line-height: 1.5; /* Spacing between lines */
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.5;
     background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-/* Center content horizontally and vertically */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     padding: 20px;
-    text-align: center; /* Centers headers */
+    text-align: center;
 }
 
-/* Container for mission statement */
 .content {
-    max-width: 600px; /* Limit content width */
+    max-width: 600px;
     width: 100%;
     background-color: white;
-    padding: 20px; /* Space inside the box */
-    margin: 10px;   /* Space outside the box */
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: left; /* Paragraphs left-aligned */
+    text-align: left;
 }
 
-/* Header styling */
 header.title h1 {
     font-size: 2.5rem;
     color: #00539C;
