@@ -1,1 +1,54 @@
+/* General page styling */
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: white;
+}
+
+/* Container box */
+.container {
+    max-width: 600px;
+    border: 1px solid #ccc;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Main title */
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+h2 {
+    color: #006EB6;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+/* Paragraphs left aligned */
+p {
+    text-align: left;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Ordered list left aligned */
+ol {
+    text-align: left;
+    line-height: 1.5;
+    margin-left: 20px;
+}
+
+/* Logo image */
+.logo {
+    width: 150px;
+    margin-top: 30px;
+}
 
