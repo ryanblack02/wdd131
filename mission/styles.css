@@ -1,53 +1,60 @@
-/* General page styling */
+/* styles.css */
+
+/* Set default font and size */
 body {
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
+    line-height: 1.5;
     display: flex;
-    justify-content: center;
-    padding: 50px;
-    background-color: white;
+    justify-content: center; /* centers the content horizontally */
+    padding: 50px; /* adds space around the content */
 }
 
-/* Container box */
-.container {
+/* Container for the mission statement box */
+.mission-container {
     max-width: 600px;
-    border: 1px solid #ccc;
-    padding: 30px;
-    text-align: center;
+    border: 1px solid #ccc; /* adds the thin border around the box */
+    padding: 40px; /* space inside the box */
+    text-align: center; /* center titles and main content */
+    box-sizing: border-box;
 }
 
 /* Main title */
 h1 {
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px; /* space letters out */
     margin-bottom: 10px;
 }
 
 /* Subtitle */
 h2 {
     color: #006EB6;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-}
-
-/* Paragraphs left aligned */
-p {
-    text-align: left;
-    line-height: 1.5;
+    font-weight: normal;
+    letter-spacing: 1.5px;
     margin-bottom: 20px;
+    font-size: 18px;
 }
 
-/* Ordered list left aligned */
+/* Paragraphs inside the box */
+p, li {
+    text-align: left; /* left-align main content */
+    margin-bottom: 15px;
+}
+
+/* Italicized text */
+em {
+    font-style: italic;
+}
+
+/* Numbered list */
 ol {
-    text-align: left;
-    line-height: 1.5;
-    margin-left: 20px;
+    padding-left: 20px; /* adds space for numbers */
 }
 
-/* Logo image */
+/* Logo */
 .logo {
-    width: 150px;
     margin-top: 30px;
+    width: 150px; /* resize logo */
+    height: auto;
 }
