@@ -3,42 +3,42 @@ body {
     font-size: 20px;
     line-height: 1.5;
     display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
-    min-height: 100vh; /* full viewport height */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #fff;
 }
 
 .mission-container {
-    max-width: 600px; /* limit content width */
-    padding: 40px; /* inner spacing */
-    text-align: center; /* center titles and main block */
-    border: 1px solid #ccc; /* thin border */
-    box-sizing: border-box; /* include padding in width */
+    max-width: 600px; /* limit content width
+    padding: 40px; /* inner spacing
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 h1 {
     font-weight: bold;
-    text-transform: uppercase; /* all caps */
-    letter-spacing: 2px; /* space out letters */
-    margin: 0 0 15px 0; /* spacing below */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 15px 0;
 }
 
 /* Subtitle */
 h2 {
     font-weight: normal;
-    text-transform: uppercase; /* ensure all caps if needed */
-    letter-spacing: 1.5px; /* spaced letters */
-    color: #006EB6; /* subtitle color */
-    margin: 0 0 25px 0; /* spacing below */
-    font-size: 20px; /* same as default text */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #006EB6;
+    margin: 0 0 25px 0;
+    font-size: 20px;
 }
 
 p, li {
-    text-align: left; /* left-align main content */
-    margin: 0 0 15px 0; /* spacing between paragraphs */
+    text-align: left;
+    margin: 0 0 15px 0;
 }
 
 /* Italics */
@@ -47,12 +47,13 @@ em {
 }
 
 ol {
-    padding-left: 20px; /* space for numbers */
+    padding-left: 20px;
+    padding-down:20px;
 }
 
 .logo {
-    display: block; /* ensures proper spacing */
-    margin: 30px auto 0 auto; /* center and spacing from content */
-    width: 150px; /* resize logo */
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 150px;
     height: auto;
 }
