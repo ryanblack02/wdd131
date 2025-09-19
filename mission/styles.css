@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Apply a full-height layout */
+/* Full-height layout */
 html, body {
     height: 100%;
     font-family: "Times New Roman", serif; /* Times New Roman font */
@@ -15,68 +15,60 @@ html, body {
     color: #333;
 }
 
-/* Center the content using Flexbox */
+/* Center content horizontally and vertically */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    text-align: center; /* Centers headers and main container */
+    text-align: center; /* Centers headers */
 }
 
-/* Mission statement container */
-.mission {
+/* Container for mission statement */
+.content {
     max-width: 600px; /* Limit content width */
     width: 100%;
     background-color: white;
     padding: 20px; /* Space inside the box */
     margin: 10px;   /* Space outside the box */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: left; /* Paragraphs left-aligned */
 }
 
 /* Header styling */
-header {
-    margin-bottom: 20px;
-}
-
-header h1 {
+header.title h1 {
     font-size: 2.5rem;
-    color: #00539C; /* Main title color */
-    letter-spacing: 2px; /* Space out letters */
-    text-transform: uppercase; /* All caps */
-    text-align: center; /* Center the title */
+    color: #00539C;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
     margin-bottom: 10px;
 }
 
-/* Subtitle styling */
-.subtitle {
+header.title h2 {
+    font-size: 1.5rem;
     color: #006EB6; /* Subtitle color */
-    font-size: 1.2rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-align: center; /* Center subtitle */
-    margin-bottom: 15px;
-}
-
-/* Paragraph styling inside the box */
-.mission p {
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-
-/* Footer styling */
-footer {
     text-align: center;
-    margin-top: 20px;
-    color: #666;
+    margin-bottom: 20px;
 }
 
-/* Logo image */
+/* Paragraph spacing */
+.content p {
+    margin-bottom: 15px;
+}
+
+/* Ordered list spacing */
+.does-list li {
+    margin-bottom: 10px;
+}
+
+/* Logo styling */
 .logo {
     display: block;
-    margin: 0 auto 15px auto; /* Center logo with margin below */
-    width: 150px; /* Resize the logo */
+    margin: 20px auto 0 auto;
+    width: 150px;
     height: auto;
 }
