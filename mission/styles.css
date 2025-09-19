@@ -1,80 +1,53 @@
+/* General page styling */
 body {
+    font-family: "Times New Roman", Times, serif;
     font-size: 20px;
-    line-height: 1.5;
     display: flex;
-    justify-content: center; /* centers the content horizontally */
-    padding: 50px; /* adds space around the content */
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
-    min-height: 100vh; /* full viewport height */
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    text-align: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: white;
 }
 
-.mission-container {
+/* Container box */
+.container {
     max-width: 600px;
-    border: 1px solid #ccc; /* adds the thin border around the box */
-    padding: 40px; /* space inside the box */
-    text-align: center; /* center titles and main content */
-    box-sizing: border-box;
-    max-width: 600px; /* limit content width */
-    padding: 40px; /* inner spacing */
-    text-align: center; /* center titles and main block */
-    border: 1px solid #ccc; /* thin border */
-    box-sizing: border-box; /* include padding in width */
+    border: 1px solid #ccc;
+    padding: 30px;
+    text-align: center;
 }
 
+/* Main title */
 h1 {
-    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px; /* space letters out */
+    letter-spacing: 3px;
     margin-bottom: 10px;
-    text-transform: uppercase; /* all caps */
-    letter-spacing: 2px; /* space out letters */
-    margin: 0 0 15px 0; /* spacing below */
-    text-align: center;
 }
 
 /* Subtitle */
 h2 {
     color: #006EB6;
-    font-weight: normal;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
     font-size: 18px;
-    text-transform: uppercase; /* ensure all caps if needed */
-    letter-spacing: 1.5px; /* spaced letters */
-    color: #006EB6; /* subtitle color */
-    margin: 0 0 25px 0; /* spacing below */
-    font-size: 20px; /* same as default text */
-    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 
-p, li {
-    text-align: left; /* left-align main content */
-    margin-bottom: 15px;
-    margin: 0 0 15px 0; /* spacing between paragraphs */
-    text-align: center;
+/* Paragraphs left aligned */
+p {
+    text-align: left;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
-/* Italics */
-em {
-    font-style: italic;
-}
-
+/* Ordered list left aligned */
 ol {
-    padding-left: 20px; /* adds space for numbers */
-    padding-left: 20px; /* space for numbers */
-    text-align: center;
+    text-align: left;
+    line-height: 1.5;
+    margin-left: 20px;
 }
 
+/* Logo image */
 .logo {
+    width: 150px;
     margin-top: 30px;
-    display: block; /* ensures proper spacing */
-    margin: 30px auto 0 auto; /* center and spacing from content */
-    width: 150px; /* resize logo */
-    height: auto;
-    text-align: center;
 }
