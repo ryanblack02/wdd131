@@ -18,4 +18,4 @@ document.body.appendChild(newSection);
 document.getElementById('p2').innerText = 'Hello World';
 const greenP = document.querySelector(".green");
 const parentSection = greenP.closest("section");
-console.log(parentSection); // Just to see it in console
+console.log(parentSection);
