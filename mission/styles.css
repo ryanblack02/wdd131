@@ -1,71 +1,48 @@
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    font-family: "Times New Roman", serif;
-    font-size: 20px;
-    line-height: 1.5;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
+/* Base Light Theme */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #000;
+    margin: 0;
+    padding: 0;
 }
 
 .content {
-    max-width: 600px;
-    width: 100%;
-    background-color: white;
+    max-width: 800px;
+    margin: auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: left;
 }
 
-header.title h1 {
-    font-size: 2.5rem;
-    color: #00539C;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 10px;
+h1 {
+    margin-bottom: 0;
 }
 
-header.title h2 {
-    font-size: 1.5rem;
-    color: #006EB6; /* Subtitle color */
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 20px;
+h2 {
+    color: #006EB6;
+    margin-top: 0;
 }
 
-/* Paragraph spacing */
-.content p {
-    margin-bottom: 15px;
+.does-list {
+    margin-left: 20px;
 }
 
-/* Ordered list spacing */
-.does-list li {
-    margin-bottom: 10px;
-}
-
-/* Logo styling */
 .logo {
     display: block;
-    margin: 20px auto 0 auto;
-    width: 150px;
-    height: auto;
+    margin: 20px auto;
+    max-width: 200px;
 }
+
+/* Dark Theme */
+.dark {
+    background-color: #333;
+    color: white;
+}
+
+.dark h2 {
+    color: #66CCFF;
+}
+
+.dark a {
+    color: #66CCFF;
+}
+
