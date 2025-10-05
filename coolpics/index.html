@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A cool responsive photo gallery project for WDD 131" />
+  <meta name="author" content="Ryan Black" />
+  <title>Cool Pics | WDD 131</title>
+  <link rel="stylesheet" href="coolpics.css" />
+  <script src="coolpics.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Cool Pics</h1>
+    <button id="menu">☰ Menu</button>
+    <nav class="hidden">
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
+  <main>
+    <h2>View From Above</h2>
+    <section class="gallery">
+      <figure><img src="images/norris-sm.jpeg" alt="Canyon at sunset"></figure>
+      <figure><img src="images/mountain.jpeg" alt="Mountain peaks"></figure>
+      <figure><img src="images/forest.jpeg" alt="Forest with fog"></figure>
+      <figure><img src="images/lake.jpeg" alt="Calm blue lake"></figure>
+      <figure><img src="images/road.jpeg" alt="Winding road"></figure>
+      <figure><img src="images/bridge.jpeg" alt="Bridge over river"></figure>
+      <figure><img src="images/desert.jpeg" alt="Sand dunes"></figure>
+      <figure><img src="images/flowers.jpeg" alt="Wildflower field"></figure>
+      <figure><img src="images/city.jpeg" alt="City skyline at night"></figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Cool Pics | Ryan Black</p>
+  </footer>
+</body>
+</html>
