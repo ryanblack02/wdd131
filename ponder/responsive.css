@@ -1,5 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header, main, footer {
@@ -8,6 +10,10 @@ header, main, footer {
   padding: 1em;
   border: 1px solid #bbb;
   background-color: #e6f2ff;
+}
+
+h1 {
+  text-align: center;
 }
 
 main {
@@ -19,6 +25,46 @@ main {
 section {
   background-color: white;
   padding: 1em;
+  border: 1px solid #ccc;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #616061;
+}
+
+.hide {
+  display: none;
+}
+
+.menu-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
 }
 
 @media screen and (min-width: 500px) {
@@ -29,4 +75,25 @@ section {
     background-color: gray;
     color: white;
   }
+}
+
+@media screen and (min-width: 700px) {
+  .menu-btn {
+    display: none;
+  }
+  nav.hide {
+    display: block;
+  }
+  nav a {
+    display: inline;
+    padding: 0 15px;
+  }
+  nav {
+    text-align: right;
+  }
+}
+
+footer {
+  text-align: center;
+  font-weight: bold;
 }
