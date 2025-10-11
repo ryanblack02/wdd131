@@ -1,4 +1,6 @@
-// Toggle nav visibility
+// ======================
+// NAVIGATION TOGGLE
+// ======================
 const menuButton = document.getElementById('menu');
 const nav = document.querySelector('nav');
 
@@ -6,7 +8,7 @@ menuButton.addEventListener('click', () => {
   nav.classList.toggle('hidden');
 });
 
-// Fix nav visibility when resizing
+// Ensure correct nav visibility when resizing
 function handleResize() {
   if (window.innerWidth >= 1000) {
     nav.classList.remove('hidden');
@@ -17,10 +19,14 @@ function handleResize() {
 window.addEventListener('resize', handleResize);
 handleResize();
 
-// Update footer year
+// ======================
+// FOOTER YEAR
+// ======================
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Image viewer
+// ======================
+// IMAGE VIEWER (MODAL)
+// ======================
 const viewer = document.getElementById('viewer');
 const viewerImage = viewer.querySelector('img');
 const closeBtn = viewer.querySelector('.close-viewer');
@@ -30,16 +36,17 @@ galleryImages.forEach(img => {
   img.addEventListener('click', () => {
     let largeSrc;
 
-    // If it’s the norris small image, open the full version
+    // Handle different file naming patterns
     if (img.src.includes('norris-sm.jpeg')) {
-  largeSrc = img.src.replace('-sm.jpeg', '-full.jpeg');
-} else if (img.src.includes('-sm')) {
-  // In case you add other small images in the future
-  largeSrc = img.src.replace('-sm', '');
-} else {
-  // Default to the same file if no small version exists
-  largeSrc = img.src;
-}
+      // Special case: replace with full .jpeg version
+      largeSrc = img.src.replace('-sm.jpeg', '-full.jpeg');
+    } else if (img.src.includes('-sm')) {
+      // Generic small version → full version conversion
+      largeSrc = img.src.replace('-sm', '');
+    } else {
+      // Default: use the same image if no small version exists
+      largeSrc = img.src;
+    }
 
     viewerImage.src = largeSrc;
     viewerImage.alt = img.alt;
@@ -47,9 +54,12 @@ galleryImages.forEach(img => {
   });
 });
 
+// ======================
+// MODAL CLOSE HANDLERS
+// ======================
 closeBtn.addEventListener('click', () => viewer.close());
 
-// Click outside to close
+// Allow clicking outside the image to close the viewer
 viewer.addEventListener('click', (e) => {
   if (e.target === viewer) viewer.close();
 });
