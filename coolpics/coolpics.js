@@ -32,11 +32,14 @@ galleryImages.forEach(img => {
 
     // If it’s the norris small image, open the full version
     if (img.src.includes('norris-sm.jpeg')) {
-      largeSrc = img.src.replace('-sm.jpeg', '-full.jpeg');
-    } else {
-      // Otherwise, open the same .jpg version
-      largeSrc = img.src;
-    }
+  largeSrc = img.src.replace('-sm.jpeg', '-full.jpeg');
+} else if (img.src.includes('-sm')) {
+  // In case you add other small images in the future
+  largeSrc = img.src.replace('-sm', '');
+} else {
+  // Default to the same file if no small version exists
+  largeSrc = img.src;
+}
 
     viewerImage.src = largeSrc;
     viewerImage.alt = img.alt;
