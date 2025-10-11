@@ -114,14 +114,15 @@ dialog::backdrop {
 }
 
 dialog img {
-  width: 90vw;           /* Fill 90% of the viewport width */
-  height: auto;          /* Keep correct proportions */
-  max-height: 90vh;      /* Don’t exceed 90% of viewport height */
-  object-fit: contain;   /* Fit image nicely without cropping */
+  width: 90vw;             /* Fill 90% of screen width */
+  height: auto;            /* Maintain aspect ratio */
+  max-height: 90vh;        /* Don’t exceed viewport height */
+  object-fit: contain;     /* No cropping */
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+  display: block;
+  margin: auto;
 }
-
 
 .close-viewer {
   position: absolute;
