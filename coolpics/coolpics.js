@@ -24,35 +24,51 @@ handleResize();
 // ======================
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ======================
-// IMAGE VIEWER (MODAL)
-// ======================
-const viewer = document.getElementById('viewer');
-const viewerImage = viewer.querySelector('img');
-const closeBtn = viewer.querySelector('.close-viewer');
-const galleryImages = document.querySelectorAll('.gallery img');
+/* ===== Image Viewer (Modal) ===== */
+#viewer {
+  border: none;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-galleryImages.forEach(img => {
-  img.addEventListener('click', () => {
-    let largeSrc;
+#viewer::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
 
-    // Handle different file naming patterns
-    if (img.src.includes('norris-sm.jpeg')) {
-      // Special case: replace with full .jpeg version
-      largeSrc = img.src.replace('-sm.jpeg', '-full.jpeg');
-    } else if (img.src.includes('-sm')) {
-      // Generic small version → full version conversion
-      largeSrc = img.src.replace('-sm', '');
-    } else {
-      // Default: use the same image if no small version exists
-      largeSrc = img.src;
-    }
+#viewer img {
+  max-width: 90vw;   /* 90% of viewport width */
+  max-height: 90vh;  /* 90% of viewport height */
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
 
-    viewerImage.src = largeSrc;
-    viewerImage.alt = img.alt;
-    viewer.showModal();
-  });
-});
+.close-viewer {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease;
+}
+
+.close-viewer:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 
 // ======================
 // MODAL CLOSE HANDLERS
