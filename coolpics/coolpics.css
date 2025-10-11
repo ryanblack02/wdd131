@@ -13,6 +13,7 @@ body {
   background-color: var(--bg-color);
 }
 
+/* Header */
 header {
   display: flex;
   align-items: center;
@@ -114,4 +115,37 @@ footer {
   .gallery {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Dialog (image viewer) */
+dialog {
+  border: none;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+dialog img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
 }
