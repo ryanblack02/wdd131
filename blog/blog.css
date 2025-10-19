@@ -1,0 +1,105 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+
+:root {
+  --gold: #efc69b;
+  --red: #af1b3f;
+  --dark: #473144;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Skip link accessibility */
+.skiptocontent a {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--gold);
+  color: #000;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skiptocontent a:focus {
+  top: 0;
+}
+
+/* Header */
+header {
+  border-bottom: 5px solid var(--red);
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: "Lora", serif;
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: end;
+  justify-items: end;
+  gap: 1rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  padding: 0.5rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+}
+
+/* Layout */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Articles section */
+.articles article {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+
+.articles img {
+  width: 100%;
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+}
+
+/* Filters box */
+.filters {
+  background-color: var(--gold);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 3px solid var(--red);
+  margin-top: 2rem;
+  color: var(--dark);
+}
