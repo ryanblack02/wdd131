@@ -42,6 +42,9 @@ const movies = [
       }
     ];
 
-function movieTemplate(movie) {
-return ``
-}
+    movies.forEach(movie => {
+
+        // Code for going through each movie and creating content for that movie
+    
+    });
+          
