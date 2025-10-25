@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flick Picks</title>
+  <link rel="stylesheet" href="movie.css">
+</head>
+<body>
+  <header>
+    <h1>Flick Picks</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#now-showing">Now Showing</a></li>
+        <li><a href="#coming-soon">Coming Soon</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Now Showing Section -->
+    <section id="now-showing" aria-labelledby="now-showing-heading">
+      <h2 id="now-showing-heading">Now Showing</h2>
+
+      <article>
+        <img src="images/inception.jpg" alt="Poster for the movie Inception">
+        <h3>Inception</h3>
+        <p>
+          A skilled thief is given a chance at redemption if he can successfully perform inception —
+          planting an idea into someone's subconscious. Starring Leonardo DiCaprio.
+        </p>
+        <button type="button" aria-label="Read more about Inception">Read More</button>
+      </article>
+
+      <article>
+        <img src="images/interstellar.jpg" alt="Poster for the movie Interstellar">
+        <h3>Interstellar</h3>
+        <p>
+          A team of explorers travel through a wormhole in space in an attempt to ensure humanity’s survival.
+        </p>
+        <button type="button" aria-label="Read more about Interstellar">Read More</button>
+      </article>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section id="coming-soon" aria-labelledby="coming-soon-heading">
+      <h2 id="coming-soon-heading">Coming Soon</h2>
+
+      <article>
+        <img src="images/dune2.jpg" alt="Poster for the upcoming movie Dune: Part Two">
+        <h3>Dune: Part Two</h3>
+        <p>
+          Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.
+        </p>
+        <button type="button" aria-label="Read more about Dune: Part Two">Read More</button>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>&copy; 2025 Flick Picks. All rights reserved.</p>
+  </footer>
+</body>
+</html>
