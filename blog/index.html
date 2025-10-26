@@ -29,29 +29,20 @@
   </header>
 
   <main id="maincontent">
-    <section class="articles">
-      <article>
-        <img src="https://placehold.co/150x220" alt="Book cover for The Hobbit" />
-        <div>
-          <h2>The Hobbit</h2>
-          <p><strong>Author:</strong> J.R.R. Tolkien</p>
-          <p>A timeless adventure of courage, friendship, and dragons.</p>
-        </div>
-      </article>
+    <!-- Articles will be generated dynamically -->
+    <section class="articles"></section>
 
-      <article>
-        <img src="https://placehold.co/150x220" alt="Book cover for To Kill a Mockingbird" />
-        <div>
-          <h2>To Kill a Mockingbird</h2>
-          <p><strong>Author:</strong> Harper Lee</p>
-          <p>A moving exploration of justice, empathy, and childhood in the Deep South.</p>
-        </div>
-      </article>
-    </section>
-
+    <!-- Filters -->
     <aside class="filters">
       <h3>Filters</h3>
-      <p>(Coming soon)</p>
+      <label for="genreSelect">Genre:</label>
+      <select id="genreSelect">
+        <option value="all">All</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Classic">Classic</option>
+        <option value="Science Fiction">Science Fiction</option>
+        <option value="Mystery">Mystery</option>
+      </select>
     </aside>
   </main>
 
