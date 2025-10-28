@@ -44,3 +44,5 @@ function showErrors(errors) {
   errorEl.innerHTML = html.join("");
 }
 // attach a change event handler to the paymentMethod input
+
+// attach a submit event handler to the form
