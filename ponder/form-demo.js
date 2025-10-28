@@ -46,3 +46,4 @@ function showErrors(errors) {
 // attach a change event handler to the paymentMethod input
 
 // attach a submit event handler to the form
+document.querySelector( "#checkoutForm").addEventListener("submit", validateForm)
