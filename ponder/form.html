@@ -13,11 +13,25 @@
     <section class="errors"></section>
 
     <form id="checkoutForm" action="completed.html">
+      <!-- Name -->
       <p>
         <label for="name">Full Name</label>
         <input id="name" name="name" type="text" placeholder="Enter your full name" required>
       </p>
 
+      <!-- Email -->
+      <p>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email" required>
+      </p>
+
+      <!-- Address -->
+      <p>
+        <label for="address">Address</label>
+        <input id="address" name="address" type="text" placeholder="Enter your address" required>
+      </p>
+
+      <!-- Payment Method -->
       <p>
         <label for="paymentMethod">Payment Method</label>
         <select id="paymentMethod" name="paymentMethod" required>
@@ -27,6 +41,7 @@
         </select>
       </p>
 
+      <!-- Credit Card Number -->
       <div id="creditCardContainer" class="hide">
         <p>
           <label for="creditCard">Credit Card Number</label>
@@ -34,6 +49,7 @@
         </p>
       </div>
 
+      <!-- PayPal Username -->
       <div id="paypalContainer" class="hide">
         <p>
           <label for="paypalUsername">PayPal Username</label>
