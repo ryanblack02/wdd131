@@ -36,7 +36,7 @@ const books = [
 const articlesContainer = document.querySelector(".articles");
 const genreSelect = document.getElementById("genreSelect");
 
-// Render book cards
+// Render books
 function renderBooks(bookArray) {
   articlesContainer.innerHTML = ""; // Clear previous content
 
@@ -71,46 +71,6 @@ function filterBooks() {
   }
 }
 
-// Initialize books on page load
+// Initialize page
 renderBooks(books);
 genreSelect.addEventListener("change", filterBooks);
-
-// ---------------------
-// Stretch: Form Validation
-// ---------------------
-const form = document.getElementById("paymentForm");
-const nameInput = document.getElementById("name");
-const ccInput = document.getElementById("cc");
-const errorDiv = document.getElementById("errorMessages");
-
-function showErrors(errors) {
-  errorDiv.innerHTML = errors.map(err => `<p>${err}</p>`).join("");
-}
-
-function validateForm(event) {
-  let isValid = true;
-  let errors = [];
-
-  // Name validation
-  if (nameInput.value !== "Bob") {
-    isValid = false;
-    errors.push("Only people named Bob can submit the form.");
-  }
-
-  // Credit card validation
-  if (ccInput.value !== "1234123412341234") {
-    isValid = false;
-    errors.push("Invalid credit card number. Use 1234123412341234 for testing.");
-  }
-
-  if (!isValid) {
-    event.preventDefault(); // stop form submission
-    showErrors(errors);
-    return false;
-  }
-
-  return true; // form is valid
-}
-
-// Attach listener
-form.addEventListener("submit", validateForm);
