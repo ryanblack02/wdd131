@@ -7,7 +7,6 @@ function showErrors(errors) {
 
 // Toggle payment details
 function togglePaymentDetails(event) {
-  const form = document.querySelector("#checkoutForm");
   const creditCardContainer = document.getElementById("creditCardContainer");
   const paypalContainer = document.getElementById("paypalContainer");
   const creditCardInput = document.getElementById("creditCard");
@@ -34,6 +33,8 @@ function togglePaymentDetails(event) {
 function validateForm(event) {
   const form = event.target;
   const nameInput = form.querySelector("#name");
+  const emailInput = form.querySelector("#email");
+  const addressInput = form.querySelector("#address");
   const paymentMethod = form.querySelector("#paymentMethod").value;
   const creditCardInput = form.querySelector("#creditCard");
   const paypalInput = form.querySelector("#paypalUsername");
@@ -44,6 +45,18 @@ function validateForm(event) {
   if (nameInput.value.trim() !== "Bob") {
     isValid = false;
     errors.push("Only people named Bob can submit the form.");
+  }
+
+  // Email validation
+  if (emailInput.value.trim() === "") {
+    isValid = false;
+    errors.push("Email is required.");
+  }
+
+  // Address validation
+  if (addressInput.value.trim() === "") {
+    isValid = false;
+    errors.push("Address is required.");
   }
 
   // Payment method validation
@@ -64,7 +77,7 @@ function validateForm(event) {
     errors.push("PayPal username is required.");
   }
 
-  // Show errors and prevent submission if invalid
+  // Stop form submission if invalid
   if (!isValid) {
     event.preventDefault();
     showErrors(errors);
