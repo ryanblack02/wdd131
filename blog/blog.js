@@ -1,6 +1,6 @@
-// blog.js
 console.log("Blog JS loaded.");
 
+// Book data
 const books = [
   {
     title: "The Hobbit",
@@ -32,13 +32,14 @@ const books = [
   }
 ];
 
-// Select elements
+// DOM elements
 const articlesContainer = document.querySelector(".articles");
 const genreSelect = document.getElementById("genreSelect");
 
-// Function to render book cards
+// Render book cards
 function renderBooks(bookArray) {
-  articlesContainer.innerHTML = ""; // clear
+  articlesContainer.innerHTML = ""; // Clear previous content
+
   if (bookArray.length === 0) {
     articlesContainer.innerHTML = "<p>No books found for this genre.</p>";
     return;
@@ -58,14 +59,15 @@ function renderBooks(bookArray) {
   });
 }
 
-// Filter function
+// Filter books by genre
 function filterBooks() {
-  const selected = genreSelect.value;
-  if (selected === "all") {
+  const selectedGenre = genreSelect.value;
+
+  if (selectedGenre === "all") {
     renderBooks(books);
   } else {
-    const filtered = books.filter(book => book.genre === selected);
-    renderBooks(filtered);
+    const filteredBooks = books.filter(book => book.genre === selectedGenre);
+    renderBooks(filteredBooks);
   }
 }
 
