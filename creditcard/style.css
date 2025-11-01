@@ -1,27 +1,29 @@
+/* Page setup */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f3f3f3; /* neutral light background */
-  margin: 0;
+  background-color: #f3f3f3; /* neutral background */
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
   min-height: 100vh;
 }
 
-.container {
-  margin-top: 60px;
+#form-container {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
 }
 
+/* Card wrapper for perspective */
 .card-wrapper {
   perspective: 1000px;
   width: 350px;
   height: 200px;
 }
 
+/* Card container for 3D flip */
 .card-container {
   width: 100%;
   height: 100%;
@@ -30,41 +32,45 @@ body {
   transition: transform 0.6s;
 }
 
+/* Card front & back */
 .card {
-  position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* neutral card color */
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   padding: 20px;
   box-sizing: border-box;
+  position: absolute;
   backface-visibility: hidden;
 }
 
-.card-front {
+#card-front {
   z-index: 2;
   transform: rotateY(0deg);
 }
 
-.card-back {
+#card-back {
   transform: rotateY(180deg);
 }
 
+/* Flip when focused on CVV */
 .card-container.flipped {
   transform: rotateY(180deg);
 }
 
-.card-logo {
+/* Logo */
+#card-logo {
   width: 60px;
-  height: auto;
   float: right;
 }
 
+/* Labels & inputs */
 label {
   display: block;
   font-size: 0.75rem;
   margin-top: 10px;
+  text-transform: uppercase;
 }
 
 input {
@@ -74,30 +80,34 @@ input {
   border: 1px solid #ccc;
   margin-top: 5px;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 
-.expiration-container {
+/* Expiration fields */
+.exp-fields {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
-.exp-field {
+.exp-fields input {
   flex: 1;
 }
 
-.magnetic-strip {
+/* Back card elements */
+#card-stripe {
   background-color: #333;
   height: 40px;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   border-radius: 5px;
 }
 
-.cvv-container {
+#cvv-container {
   width: 50%;
 }
 
+/* Submit button */
 button {
   margin-top: 30px;
   background-color: white;
