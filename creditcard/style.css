@@ -22,7 +22,6 @@ body {
   height: 200px;
 }
 
-/* Card common */
 .card {
   position: absolute;
   width: 100%;
@@ -36,30 +35,14 @@ body {
   backface-visibility: hidden;
 }
 
-/* Front card */
 .front {
   z-index: 2;
-  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-  color: white;
   transform: rotateY(0deg);
 }
 
-/* Orange logo */
-.card-logo {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  height: 40px;
-}
-
-/* Back card */
 .back {
-  z-index: 1;
   background: #ccc;
   transform: rotateY(180deg);
-  top: 15px;
-  left: 15px;
-  border-radius: 10px;
 }
 
 .card-container.flipped .front {
