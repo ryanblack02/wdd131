@@ -1,7 +1,6 @@
-/* General layout */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #f3f3f3;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -9,23 +8,21 @@ body {
   min-height: 100vh;
 }
 
-.payment-container {
+.container {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-top: 50px;
 }
 
-.credit-card {
+.card-container {
   position: relative;
   width: 350px;
   height: 200px;
-  perspective: 1000px;
 }
 
-.front-card,
-.back-card {
+.card {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -34,17 +31,26 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   box-sizing: border-box;
+  transition: transform 0.6s;
+  backface-visibility: hidden;
 }
 
-.front-card {
+.front {
   z-index: 2;
-  transform: translateY(-15px);
+  transform: rotateY(0deg);
 }
 
-.back-card {
-  top: 15px;
-  left: 20px;
+.back {
   background: #ccc;
+  transform: rotateY(180deg);
+}
+
+.card-container.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card-container.flipped .back {
+  transform: rotateY(360deg);
 }
 
 .total {
@@ -72,7 +78,6 @@ input {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  margin-top: 10px;
 }
 
 .col {
@@ -84,7 +89,7 @@ input {
   gap: 5px;
 }
 
-.black-strip {
+.strip {
   background: #333;
   height: 40px;
   width: 100%;
@@ -98,7 +103,7 @@ input {
   width: 50%;
 }
 
-.submit-btn {
+button {
   background-color: white;
   border: 2px solid black;
   border-radius: 5px;
@@ -108,7 +113,7 @@ input {
   transition: 0.2s;
 }
 
-.submit-btn:hover {
+button:hover {
   background-color: #e6e6e6;
 }
 
