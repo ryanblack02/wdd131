@@ -1,79 +1,47 @@
-/* ===== Reset minimal ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fff; /* White page */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 50px 20px;
-}
-
-/* ===== Container for cards ===== */
-.card-wrapper {
+/* Container for both cards */
+.card-container {
   position: relative;
-  width: 350px;
-  height: 200px;
-  margin-bottom: 40px;
+  width: 350px;   /* card width */
+  height: 200px;  /* card height */
+  margin: 50px auto;
 }
 
-/* ===== Common card styles ===== */
-.card {
+/* Front card styling */
+.card.front {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-color: #2b2b2b; /* dark gray for example */
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   color: white;
-  display: grid;
-  gap: 10px;
-  font-family: Arial, sans-serif;
-}
-
-/* ===== Front card ===== */
-.card.front {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   z-index: 2;
-  background: linear-gradient(135deg, #2b2b2b, #444);
-  transition: transform 0.3s ease;
 }
 
-.card.front:hover {
-  transform: translateY(-5px);
-}
-
-/* ===== Back card ===== */
+/* Back card styling */
 .card.back {
   position: absolute;
-  top: 15px;     /* small vertical offset */
-  left: 15px;    /* small horizontal offset */
+  top: 25px;     /* offset down */
+  left: 25px;    /* offset right */
   width: 100%;
   height: 100%;
-  background-color: #444;
+  background-color: #444;  /* slightly lighter gray */
   border-radius: 15px;
   padding: 20px;
   color: white;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   z-index: 1;
-  transform: scale(0.95);
+  transform: scale(0.95); /* slightly smaller */
 }
 
-/* Optional hover effect for back card */
-.card-wrapper:hover .card.back {
-  transform: scale(0.95) translateY(-5px);
-}
-
-/* ===== CVV box on back card ===== */
+/* CVV box on the back card */
 .cvv {
   position: absolute;
-  top: 80px;       /* vertical position on back card */
-  right: 20px;     /* horizontal from back card edge */
+  top: 80px;        /* adjust vertical position on back card */
+  right: 20px;      /* adjust horizontal position */
   width: 60px;
   height: 30px;
   background-color: white;
@@ -86,72 +54,9 @@ body {
   font-size: 16px;
 }
 
-/* ===== Card logo ===== */
-.card-logo {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  height: 40px;
-}
-
-/* ===== Magnetic strip on back card ===== */
-.magnetic-strip {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background-color: #222;
-}
-
-/* ===== Form styles ===== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 350px;
-}
-
-label {
-  font-size: 0.85rem;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-.expiration-container {
-  display: flex;
-  gap: 10px;
-}
-
-.exp-field {
-  flex: 1;
-}
-
-button {
-  padding: 12px 20px;
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-button:hover {
-  background-color: #005fa3;
-}
-
-footer {
-  margin-top: auto;
-  padding: 20px 0;
-  font-size: 0.9rem;
-  color: #666;
-  text-align: center;
+/* Optional: add smooth hover effect */
+.card.front:hover,
+.card.back:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
