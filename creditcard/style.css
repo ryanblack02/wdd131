@@ -63,11 +63,10 @@ body {
   transform: scale(0.95) translateY(-5px);
 }
 
-/* ===== CVV box on back card ===== */
 .cvv {
   position: absolute;
-  top: 90px;        /* adjust vertical position */
-  right: 20px;      /* horizontal from right edge */
+  top: 90px;        /* keep vertical position */
+  right: 5px;       /* move closer to the right edge */
   width: 60px;
   height: 30px;
   background-color: white;
