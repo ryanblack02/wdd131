@@ -51,18 +51,19 @@ body {
 /* ===== Back card ===== */
 .card.back {
   position: absolute;
-  top: 20px;      /* slightly higher */
-  left: 50px;     /* move more to the right so CVV shows */
+  top: 20px;       /* slightly higher */
+  left: 45px;      /* moved further right so it's visible behind front card */
   width: 100%;
   height: 100%;
-  background-color: #444;  /* slightly lighter gray */
+  background-color: #444;
   border-radius: 15px;
   padding: 20px;
   color: white;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   z-index: 1;
-  transform: scale(0.95); /* slightly smaller for layered effect */
+  transform: scale(0.95);
 }
+
 
 /* Optional: front hover does not break back card */
 .card-wrapper:hover .card-back {
