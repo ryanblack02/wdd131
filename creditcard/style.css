@@ -51,8 +51,8 @@ body {
 /* ===== Back card ===== */
 .card.back {
   position: absolute;
-  top: 20px;       /* slightly higher than front card */
-  left: 25px;      /* small right shift to peek out */
+  top: 15px;     /* small vertical offset */
+  left: 15px;    /* small horizontal offset */
   width: 100%;
   height: 100%;
   background-color: #444;
@@ -61,7 +61,7 @@ body {
   color: white;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   z-index: 1;
-  transform: scale(0.95);  /* slightly smaller than front card */
+  transform: scale(0.95);
 }
 
 
@@ -72,8 +72,8 @@ body {
 
 .cvv {
   position: absolute;
-  top: 80px;       /* vertical position on back card */
-  right: 20px;     /* distance from right edge of back card */
+  top: 80px;       /* vertical on back card */
+  right: 20px;     /* from the back card edge */
   width: 60px;
   height: 30px;
   background-color: white;
