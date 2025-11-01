@@ -52,7 +52,7 @@ body {
 .card.back {
   position: absolute;
   top: 20px;       /* slightly higher */
-  left: 30px;      /* moved further right so it's visible behind front card */
+  left: 5px;      /* moved further right so it's visible behind front card */
   width: 100%;
   height: 100%;
   background-color: #444;
