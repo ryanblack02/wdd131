@@ -1,117 +1,119 @@
-/* Base page setup */
+/* General layout */
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
   margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 1rem;
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 50px;
 }
 
-/* Form container */
-.card-form {
-  background: white;
-  padding: 2rem;
-  margin-top: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 90%;
-}
-
-/* Card container with overlap */
-.card-container {
+.credit-card {
   position: relative;
-  display: grid;
-  width: 320px;
+  width: 350px;
   height: 200px;
-  margin: 0 auto 1.5rem auto;
+  perspective: 1000px;
 }
 
-.card {
+.front-card,
+.back-card {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Card layering */
-.front {
+.front-card {
   z-index: 2;
-  transform: translate(0, 0);
+  transform: translateY(-15px);
 }
 
-.back {
-  z-index: 1;
-  transform: translate(20px, 20px);
+.back-card {
+  top: 15px;
+  left: 20px;
+  background: #ccc;
 }
 
-/* Card image styling */
-.card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Input field positioning on the front card */
-.input-fields {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  color: #fff;
+.total {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 label {
   display: block;
   font-size: 0.8rem;
-  margin-top: 0.5rem;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 input {
   width: 100%;
-  padding: 0.4rem;
-  border-radius: 0.5rem;
-  border: none;
-  outline: none;
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-top: 4px;
+  box-sizing: border-box;
 }
 
-.flex-row {
+.row {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-/* Submit button */
-button {
-  display: block;
+.col {
+  flex: 1;
+}
+
+.exp-fields {
+  display: flex;
+  gap: 5px;
+}
+
+.black-strip {
+  background: #333;
+  height: 40px;
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  color: white;
-  background-color: #ff914d;
-  border: none;
-  border-radius: 0.5rem;
+  margin-bottom: 15px;
+}
+
+.cvv {
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.submit-btn {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 6px 14px;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
-button:hover {
-  background-color: #ff6f00;
+.submit-btn:hover {
+  background-color: #e6e6e6;
 }
 
-/* Footer */
 footer {
-  margin-top: auto;
-  padding: 1rem 0;
-  text-align: center;
-  color: #333;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #555;
 }
