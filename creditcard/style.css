@@ -38,13 +38,13 @@ body {
 }
 
 /* ===== Front card ===== */
-.card-front {
+.card.front {
   z-index: 2;
   background: linear-gradient(135deg, #2b2b2b, #444);
   transition: transform 0.3s ease;
 }
 
-.card-front:hover {
+.card.front:hover {
   transform: translateY(-5px);
 }
 
@@ -64,16 +64,16 @@ body {
   transform: scale(0.95);
 }
 
-
-/* Optional: front hover does not break back card */
-.card-wrapper:hover .card-back {
+/* Optional hover effect for back card */
+.card-wrapper:hover .card.back {
   transform: scale(0.95) translateY(-5px);
 }
 
+/* ===== CVV box on back card ===== */
 .cvv {
   position: absolute;
-  top: 80px;       /* vertical on back card */
-  right: 20px;     /* from the back card edge */
+  top: 80px;       /* vertical position on back card */
+  right: 20px;     /* horizontal from back card edge */
   width: 60px;
   height: 30px;
   background-color: white;
@@ -86,7 +86,7 @@ body {
   font-size: 16px;
 }
 
-/* ===== Card logos ===== */
+/* ===== Card logo ===== */
 .card-logo {
   position: absolute;
   top: 20px;
@@ -94,7 +94,7 @@ body {
   height: 40px;
 }
 
-/* ===== Magnetic strip on back ===== */
+/* ===== Magnetic strip on back card ===== */
 .magnetic-strip {
   position: absolute;
   top: 30px;
