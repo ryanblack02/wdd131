@@ -1,7 +1,13 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
+/* Reset minimal */
+body, html {
   margin: 0;
+  padding: 0;
+  box‐sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans‑serif;
+  background-color: #fff; /* White / no heavy background */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,73 +19,71 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-.card-container {
+/* wrapper for overlapping cards */
+.card‑wrapper {
   position: relative;
   width: 350px;
   height: 200px;
 }
 
-/* Card common */
+/* common card styles */
 .card {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  background: #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
   padding: 20px;
-  box-sizing: border-box;
-  transition: transform 0.6s;
-  backface-visibility: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #f8f8f8; /* light card surface */
+  display: grid;
+  gap: 10px;
+  color: #333;
 }
 
-/* Front card */
-.front {
+/* front card */
+.card‑front {
   z-index: 2;
-  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-  color: white;
-  transform: rotateY(0deg);
+  background: linear-gradient(135deg, #ededed, #dcdcdc);
 }
 
-/* Orange logo */
-.card-logo {
+/* back card */
+.card‑back {
+  z-index: 1;
+  top: 15px;
+  left: 15px;
+  background: #e0e0e0;
+}
+
+.card‑logo {
   position: absolute;
   top: 20px;
   right: 20px;
   height: 40px;
 }
 
-/* Back card */
-.back {
-  z-index: 1;
-  background: #ccc;
-  transform: rotateY(180deg);
-  top: 15px;
-  left: 15px;
-  border-radius: 10px;
+/* Magnetic strip */
+.magnetic‑strip {
+  height: 40px;
+  width: 100%;
+  background-color: #555;
+  margin-bottom: 15px;
 }
 
-.card-container.flipped .front {
-  transform: rotateY(180deg);
-}
-
-.card-container.flipped .back {
-  transform: rotateY(360deg);
-}
-
-.total {
-  font-weight: bold;
-  margin-bottom: 10px;
+.cvv‑container {
+  /* position near bottom right */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60%;
 }
 
 label {
-  display: block;
   font-size: 0.8rem;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 input {
@@ -87,55 +91,35 @@ input {
   padding: 6px;
   border: 1px solid #aaa;
   border-radius: 4px;
-  margin-top: 4px;
-  box-sizing: border-box;
+  font-size: 0.9rem;
 }
 
-.row {
+.expiration‑container {
   display: flex;
-  justify-content: space-between;
   gap: 10px;
 }
 
-.col {
+.exp‑field {
   flex: 1;
 }
 
-.exp-fields {
-  display: flex;
-  gap: 5px;
-}
-
-.strip {
-  background: #333;
-  height: 40px;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.cvv {
-  background: #eee;
-  padding: 10px;
-  border-radius: 5px;
-  width: 50%;
-}
-
 button {
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 6px 14px;
+  padding: 12px 24px;
+  background-color: #0077CC;
+  color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.2s;
+  font-size: 1rem;
 }
 
 button:hover {
-  background-color: #e6e6e6;
+  background-color: #005fa3;
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: auto;
+  padding: 20px 0;
   font-size: 0.9rem;
-  color: #555;
+  color: #666;
 }
