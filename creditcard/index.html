@@ -8,18 +8,18 @@
   <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 <body>
-  <main class="payment-container">
-    <section class="credit-card">
-      <div class="front-card">
+  <main class="container">
+    <section class="card-container">
+      <div class="card front">
         <p class="total">TOTAL: $199</p>
+        <div class="card-logo"></div>
 
         <label for="card-number">CARD NUMBER</label>
         <input
           type="text"
           id="card-number"
           maxlength="19"
-          placeholder="1234 5678 9101 1020"
-          required
+          placeholder="1234 5678 9012 3456"
         />
 
         <div class="row">
@@ -29,52 +29,34 @@
               type="text"
               id="card-holder"
               placeholder="John Doe"
-              required
             />
           </div>
-
-          <div class="col expiration">
+          <div class="col exp">
             <label>EXPIRATION</label>
             <div class="exp-fields">
-              <input
-                type="text"
-                id="exp-mm"
-                placeholder="MM"
-                maxlength="2"
-                required
-              />
-              <input
-                type="text"
-                id="exp-yy"
-                placeholder="YY"
-                maxlength="2"
-                required
-              />
+              <input type="text" id="exp-mm" placeholder="MM" maxlength="2" />
+              <input type="text" id="exp-yy" placeholder="YY" maxlength="2" />
             </div>
           </div>
         </div>
       </div>
 
-      <div class="back-card">
-        <div class="black-strip"></div>
+      <div class="card back">
+        <div class="strip"></div>
         <div class="cvv">
-          <label for="cvv">CVC/CVV</label>
-          <input
-            type="text"
-            id="cvv"
-            maxlength="3"
-            placeholder="xxx"
-            required
-          />
+          <label for="cvv-input">CVC/CVV</label>
+          <input type="text" id="cvv-input" maxlength="3" placeholder="xxx" />
         </div>
       </div>
     </section>
 
-    <button type="submit" class="submit-btn">Submit</button>
+    <button id="submit-btn">Submit</button>
   </main>
 
   <footer>
     <p>© 2025 Ryan Black</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
