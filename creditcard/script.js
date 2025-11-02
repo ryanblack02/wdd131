@@ -2,7 +2,7 @@ const cardContainer = document.querySelector(".card-container");
 const cvvInput = document.getElementById("cvv");
 const cardNumber = document.getElementById("card-number");
 
-// Flip card on CVV focus
+// Flip card when CVV is focused
 cvvInput.addEventListener("focus", () => cardContainer.classList.add("flipped"));
 cvvInput.addEventListener("blur", () => cardContainer.classList.remove("flipped"));
 
@@ -13,8 +13,8 @@ cardNumber.addEventListener("input", e => {
   e.target.value = value;
 });
 
-// Restrict numbers on expiry & CVV
-["exp-mm","exp-yy","cvv"].forEach(id => {
+// Restrict numbers for expiry and CVV
+["card-month","card-year","cvv"].forEach(id => {
   document.getElementById(id).addEventListener("input", e => {
     e.target.value = e.target.value.replace(/\D/g,'');
   });
