@@ -1,9 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,300');
 
-/* Page setup */
 body {
   background-color: #f3f3f3; /* neutral background */
-  font-family: lato, 'helvetica-light', sans-serif;
+  font-family: 'Lato', 'helvetica-light', sans-serif;
   text-transform: uppercase;
   margin: 0;
   padding: 20px 0;
@@ -44,25 +43,16 @@ body {
   letter-spacing: 1px;
   font-weight: 300;
   color: white;
-  background-color: #5a9def; /* neutral-ish card */
+  background-color: #5a9def; /* neutral-ish card color */
   backface-visibility: hidden;
 }
 
-#card-front {
-  z-index: 2;
-}
+#card-front { z-index: 2; }
+#card-back { transform: rotateY(180deg); top: 40px; right: 0; z-index: -2; }
 
-#card-back {
-  transform: rotateY(180deg);
-  top: 40px;
-  right: 0;
-  z-index: -2;
-}
+.card-container.flipped { transform: rotateY(180deg); }
 
-.card-container.flipped {
-  transform: rotateY(180deg);
-}
-
+/* Shadow */
 #shadow {
   position: absolute;
   right: 0;
@@ -76,24 +66,25 @@ body {
 }
 
 /* Logo */
-#card-logo {
+#image-container img {
   position: absolute;
   right: 0;
   top: 0;
   height: 100%;
 }
 
-/* Labels & Inputs */
+/* Labels and inputs */
 label {
   display: block;
-  margin: 0 auto 7px;
   font-size: 10px;
+  margin-bottom: 7px;
+  text-transform: uppercase;
 }
 
 input {
   border: none;
   outline: none;
-  background-color: #5a9def; /* input color same as card */
+  background-color: #5a9def;
   height: 30px;
   line-height: 30px;
   padding: 0 10px;
@@ -102,50 +93,21 @@ input {
   font-size: 10px;
   box-sizing: border-box;
   border-radius: 4px;
-  font-family: lato, 'helvetica-light', sans-serif;
+  font-family: 'Lato', 'helvetica-light', sans-serif;
   letter-spacing: 0.7px;
 }
 
-/* Expiration Fields */
-#cardholder-container {
-  width: 60%;
-  display: inline-block;
-}
-
-#exp-container {
-  margin-left: 10px;
-  width: 32%;
-  display: inline-block;
-  float: right;
-}
-
-.exp-fields {
-  display: flex;
-  gap: 10px;
-}
-
-#card-month, #card-year {
-  width: 45%;
-  font-size: 10px;
-}
+/* Expiration fields */
+#cardholder-container { width: 60%; display: inline-block; }
+#exp-container { width: 32%; display: inline-block; float: right; }
+.exp-fields { display: flex; gap: 10px; }
+#card-month, #card-year { width: 45%; }
 
 /* Back card elements */
-#card-stripe {
-  width: 100%;
-  height: 55px;
-  background-color: #3d5266;
-  position: absolute;
-  right: 0;
-}
+#card-stripe { width: 100%; height: 55px; background-color: #3d5266; position: absolute; right: 0; }
+#cvc-container { position: absolute; width: 110px; right: -115px; bottom: -10px; }
 
-#cvc-container {
-  position: absolute;
-  width: 110px;
-  right: -115px;
-  bottom: -10px;
-}
-
-/* Submit button */
+/* Button */
 #submitBtn {
   margin-top: 30px;
   background-color: white;
@@ -155,10 +117,7 @@ input {
   cursor: pointer;
   font-weight: bold;
 }
-
-#submitBtn:hover {
-  background-color: #f2f2f2;
-}
+#submitBtn:hover { background-color: #f2f2f2; }
 
 footer {
   margin-top: 40px;
