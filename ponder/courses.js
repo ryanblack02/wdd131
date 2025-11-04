@@ -10,3 +10,20 @@ const key = "code";
 
 aCourse.name
 aCourse[key]
+
+function renderHeader(course) {
+  const nameEl = document.querySelector("#courseName");
+  const codeEl = document.querySelector("#courseCode");
+  nameEl.textContent = course.name;
+  codeEl.textContent = course.code;
+}
+
+function sectionTemplate(section) {
+
+}
+
+function renderSections(sections) {
+
+}
+
+renderHeader(aCourse);
