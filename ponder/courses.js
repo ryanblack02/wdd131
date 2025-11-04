@@ -19,11 +19,20 @@ function renderHeader(course) {
 }
 
 function sectionTemplate(section) {
-
+  return <tr>
+        <td>1</td>
+        <td>STC341</td>
+        <td>23</td>
+        <td>TTh</td>
+        <td>Bro T</td>
+    </tr>
 }
 
 function renderSections(sections) {
-
+    const sectoinsEl = document.querySelector("#Sections")
+  const html = sections.map(sectionTemplate)
+  sectionsEl.innerHTML = html.join("")
 }
 
 renderHeader(aCourse);
+renderSections(aCourse.sections)
