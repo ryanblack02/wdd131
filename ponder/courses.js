@@ -6,6 +6,24 @@ const aCourse = {
     { sectionNum: 1, roomNum: "STC 353", enrolled: 26, days: "TTh", instructor: "Bro T" },
     { sectionNum: 2, roomNum: "STC 347", enrolled: 28, days: "TTh", instructor: "Sis A" }
   ],
+
+  // 🔹 Stretch: combine enroll and drop logic into one function
+  changeEnrollment: function (sectionNum, add = true) {
+    const sectionIndex = this.sections.findIndex(
+      (section) => section.sectionNum == sectionNum
+    );
+
+    if (sectionIndex >= 0) {
+      if (add) {
+        this.sections[sectionIndex].enrolled++;
+      } else if (this.sections[sectionIndex].enrolled > 0) {
+        this.sections[sectionIndex].enrolled--;
+      }
+      renderSections(this.sections);
+    } else {
+      alert("Section not found.");
+    }
+  }
 };
 
 // display course name and code
@@ -33,33 +51,15 @@ function renderSections(sections) {
   sectionsEl.innerHTML = sections.map(sectionTemplate).join("");
 }
 
-// find section by number
-function findSection(sectionNum) {
-  return aCourse.sections.find(sec => sec.sectionNum === parseInt(sectionNum));
-}
-
-// increase enrolled count
+// event handlers
 function enrollStudent() {
   const sectionNum = document.querySelector("#sectionNumber").value;
-  const section = findSection(sectionNum);
-  if (section) {
-    section.enrolled++;
-    renderSections(aCourse.sections);
-  } else {
-    alert("Section not found.");
-  }
+  aCourse.changeEnrollment(sectionNum, true);
 }
 
-// decrease enrolled count
 function dropStudent() {
   const sectionNum = document.querySelector("#sectionNumber").value;
-  const section = findSection(sectionNum);
-  if (section && section.enrolled > 0) {
-    section.enrolled--;
-    renderSections(aCourse.sections);
-  } else {
-    alert("Section not found or no students to drop.");
-  }
+  aCourse.changeEnrollment(sectionNum, false);
 }
 
 // event listeners
