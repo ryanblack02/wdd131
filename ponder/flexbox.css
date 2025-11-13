@@ -1,11 +1,11 @@
-/* Global styles */
+/* Base setup (from BYU-Idaho starter) */
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: Arial, sans-serif;
-  font-size: 1.1rem;
+  font-size: 20px;
   max-width: 1280px;
   margin: auto;
   padding: 1em;
@@ -17,20 +17,25 @@ img {
   border-radius: 10px;
 }
 
-hr {
-  border: none;
-  border-top: 2px solid #ccc;
-  margin: 1em 0;
+.main-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Navigation bar */
-.main-nav ul {
-  list-style: none;
+hr {
+  margin-top: 50px;
+}
+
+/* ----------------------------- */
+/* Flexbox Enhancements          */
+/* ----------------------------- */
+
+/* Header navigation */
+.main-nav {
   display: flex;
   justify-content: flex-end;
   gap: 1.5rem;
-  padding: 0;
-  margin: 0;
 }
 
 .main-nav a {
@@ -48,36 +53,12 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 /* Media card container */
 .media-card-container {
   flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Individual media card */
-.media-card {
-  display: flex;
-  gap: 1rem;
-  background-color: #f7f7f7;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.media-card img {
-  width: 40%;
-  object-fit: cover;
-}
-
-.card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 /* Gallery container */
@@ -85,6 +66,26 @@ main {
   flex: 1;
 }
 
+/* Media card layout */
+.media-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.media-card-image {
+  flex: 1;
+}
+
+.media-card-content {
+  flex: 2;
+}
+
+/* Gallery layout */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -92,47 +93,30 @@ main {
   justify-content: center;
 }
 
-.gallery img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.gallery .media-card {
+  flex-direction: column;
+  width: 240px;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* Responsive layout for smaller screens */
-@media (max-width: 800px) {
+/* Responsive adjustments */
+@media (max-width: 900px) {
   main {
     flex-direction: column;
   }
 
   .media-card {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
 
-  .media-card img {
-    width: 100%;
-  }
-
-  .gallery img {
-    width: 45%;
+  .media-card-content {
+    padding-top: 0.5rem;
   }
 }
 
-@media (max-width: 500px) {
-  .main-nav ul {
+@media (max-width: 600px) {
+  .main-nav {
     flex-direction: column;
     align-items: center;
-  }
-
-  .gallery img {
-    width: 100%;
   }
 }
