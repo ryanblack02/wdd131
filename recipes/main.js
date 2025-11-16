@@ -1,17 +1,4 @@
 import { recipes } from './recipes.mjs';
-
-
-ingBtn.addEventListener('click', () => {
-const expanded = ingBtn.getAttribute('aria-expanded') === 'true';
-ingBtn.setAttribute('aria-expanded', String(!expanded));
-ingBtn.textContent = expanded ? 'Show ingredients' : 'Hide ingredients';
-ingList.hidden = expanded;
-});
-
-
-const right = document.createElement('div');
-right.appendChild(content);
-right.appendChild(ingBtn);
 right.appendChild(ingList);
 
 
