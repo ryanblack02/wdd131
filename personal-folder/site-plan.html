@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Motivational Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Student Motivational Hub</h1>
+    <p>Your simple boost to keep moving forward.</p>
+  </header>
+
+  <main>
+
+    <!-- Daily Quote Section -->
+    <section id="quote-section">
+      <h2>Daily Motivation</h2>
+      <p id="quote">Click the button for a motivational quote!</p>
+      <button id="quote-btn">New Quote</button>
+    </section>
+
+    <!-- Goal Tracker Section -->
+    <section id="goal-section">
+      <h2>Your Goal for Today</h2>
+      <input id="goal-input" type="text" placeholder="Enter a simple goal..." />
+      <button id="save-goal">Save Goal</button>
+
+      <p id="saved-goal"></p>
+      <button id="complete-goal" style="display: none;">Mark as Complete</button>
+      <p id="goal-status"></p>
+    </section>
+
+    <!-- Mood Slider Section -->
+    <section id="mood-section">
+      <h2>How are you feeling?</h2>
+      <input type="range" min="0" max="10" value="5" id="mood-slider" />
+      <p id="mood-message">Slide to get encouragement.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Student Motivational Hub</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
