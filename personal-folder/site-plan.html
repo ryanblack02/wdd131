@@ -3,47 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Motivational Hub</title>
+  <title>Site Plan – Student Motivational Hub</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>Student Motivational Hub</h1>
-    <p>Your simple boost to keep moving forward.</p>
+    <h1>Site Plan: Student Motivational Hub</h1>
+    <p>WDD 131 – Final Project</p>
   </header>
 
   <main>
 
-    <!-- Daily Quote Section -->
-    <section id="quote-section">
-      <h2>Daily Motivation</h2>
-      <p id="quote">Click the button for a motivational quote!</p>
-      <button id="quote-btn">New Quote</button>
+    <!-- Site Purpose -->
+    <section>
+      <h2>Overview</h2>
+      <h3>Site Purpose</h3>
+      <p>
+        The Student Motivational Hub is designed to help students stay positive,
+        motivated, and focused. It provides daily motivational quotes, a simple goal 
+        tracker that saves goals using <strong>localStorage</strong>, and an interactive 
+        mood slider that offers custom encouragement messages based on the user’s mood.
+      </p>
+
+      <h3>Audience</h3>
+      <p>
+        The target audience is college students, teenagers, or anyone who needs simple
+        motivation and encouragement throughout their day.
+      </p>
     </section>
 
-    <!-- Goal Tracker Section -->
-    <section id="goal-section">
-      <h2>Your Goal for Today</h2>
-      <input id="goal-input" type="text" placeholder="Enter a simple goal..." />
-      <button id="save-goal">Save Goal</button>
+    <!-- Branding -->
+    <section>
+      <h2>Brand Guide</h2>
 
-      <p id="saved-goal"></p>
-      <button id="complete-goal" style="display: none;">Mark as Complete</button>
-      <p id="goal-status"></p>
+      <h3>Color Palette</h3>
+      <ul>
+        <li>Primary: #4CAF50 (fresh, uplifting green)</li>
+        <li>Secondary: #f5f5f5 (light neutral background)</li>
+        <li>Accent: #333 (text color)</li>
+      </ul>
+
+      <h3>Typography</h3>
+      <ul>
+        <li>Headings: Poppins, sans-serif</li>
+        <li>Body Text: Roboto, sans-serif</li>
+      </ul>
     </section>
 
-    <!-- Mood Slider Section -->
-    <section id="mood-section">
-      <h2>How are you feeling?</h2>
-      <input type="range" min="0" max="10" value="5" id="mood-slider" />
-      <p id="mood-message">Slide to get encouragement.</p>
+    <!-- Content -->
+    <section>
+      <h2>Content</h2>
+
+      <h3>Page Content Overview</h3>
+      <ul>
+        <li>Daily motivational quote generator</li>
+        <li>Goal input field with Save button</li>
+        <li>Goal stored in localStorage until completed/cleared</li>
+        <li>“Mark Complete” button to confirm completion</li>
+        <li>Encouraging progress message after completion</li>
+        <li>Mood slider with dynamic encouragement text</li>
+      </ul>
+
+      <h3>LocalStorage Usage</h3>
+      <p>
+        The site uses <strong>localStorage</strong> to save the user's daily goal.
+        When the user enters a goal and saves it, it is stored in the browser so
+        that if they refresh the page or return later, the goal still appears.
+        When the goal is marked as complete, the stored goal is removed.
+      </p>
     </section>
+
+    <!-- Wireframes -->
+    <section>
+      <h2>Wireframes</h2>
+
+      <h3>Home Page</h3>
+      <p>(layout is approximate)</p>
+      <img src="https://wddbyui.github.io/wdd131/common/images/personal_site/home_wireframe.png" alt="Home page wireframe example" />
+    </section>
+
   </main>
 
   <footer>
-    <p>© 2025 Student Motivational Hub</p>
+    <p>© 2025 Student Motivational Hub – Site Plan</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
