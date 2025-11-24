@@ -15,22 +15,49 @@ document.getElementById("quote-btn").addEventListener("click", () => {
 });
 
 // ----------------------------
-// Goal Tracker
+// Goal Tracker with LocalStorage
 // ----------------------------
-document.getElementById("save-goal").addEventListener("click", () => {
-  const goal = document.getElementById("goal-input").value;
+const goalInput = document.getElementById("goal-input");
+const savedGoal = document.getElementById("saved-goal");
+const completeBtn = document.getElementById("complete-goal");
+const goalStatus = document.getElementById("goal-status");
 
-  if (goal.trim() === "") {
+// Load saved goal on page load
+const storedGoal = localStorage.getItem("dailyGoal");
+const storedStatus = localStorage.getItem("goalCompleted");
+
+if (storedGoal) {
+  savedGoal.textContent = "Your Goal: " + storedGoal;
+  completeBtn.style.display = "inline-block";
+}
+
+if (storedStatus === "true") {
+  goalStatus.textContent = "Goal completed! Great job!";
+}
+
+// Save goal
+document.getElementById("save-goal").addEventListener("click", () => {
+  const goal = goalInput.value.trim();
+
+  if (goal === "") {
     alert("Please enter a goal.");
     return;
   }
 
-  document.getElementById("saved-goal").textContent = "Your Goal: " + goal;
-  document.getElementById("complete-goal").style.display = "inline-block";
+  savedGoal.textContent = "Your Goal: " + goal;
+  completeBtn.style.display = "inline-block";
+
+  // Save to localStorage
+  localStorage.setItem("dailyGoal", goal);
+  localStorage.setItem("goalCompleted", "false");
+
+  goalStatus.textContent = "";
 });
 
-document.getElementById("complete-goal").addEventListener("click", () => {
-  document.getElementById("goal-status").textContent = "Goal completed! Great job!";
+// Mark complete
+completeBtn.addEventListener("click", () => {
+  goalStatus.textContent = "Goal completed! Great job!";
+  localStorage.setItem("goalCompleted", "true");
 });
 
 // ----------------------------
