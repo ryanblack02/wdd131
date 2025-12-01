@@ -8,8 +8,13 @@
 </head>
 <body>
   <header>
-    <h1>Site Plan: Student Motivational Hub</h1>
-    <p>WDD 131 – Final Project</p>
+    <h1>Student Motivational Hub</h1>
+    <p>WDD 131 – Final Project Site Plan</p>
+
+    <!-- Text Logo -->
+    <h2 style="font-weight: 700; font-size: 28px; margin-top: 20px;">
+      LOGO: <span style="color:#4CAF50;">MotivaHub</span>
+    </h2>
   </header>
 
   <main>
@@ -17,18 +22,19 @@
     <!-- Site Purpose -->
     <section>
       <h2>Overview</h2>
+
       <h3>Site Purpose</h3>
       <p>
-        The Student Motivational Hub is designed to help students stay positive,
-        motivated, and focused. It provides daily motivational quotes, a simple goal 
-        tracker that saves goals using local storage, and an interactive 
-        mood slider that offers custom encouragement messages based on the user’s mood.
+        The Student Motivational Hub is a simple, uplifting web app designed to help 
+        students stay positive, motivated, and focused. It includes three dynamic features:
+        a daily motivational quote generator, a goal tracker that uses localStorage, 
+        and an interactive mood slider that gives custom encouragement.
       </p>
 
       <h3>Audience</h3>
       <p>
-        The target audience is college students, teenagers, or anyone who needs simple
-        motivation and encouragement throughout their day.
+        The target audience includes college students, teenagers, and adults looking 
+        for quick motivation, stress relief, and simple personal tracking tools.
       </p>
     </section>
 
@@ -38,9 +44,9 @@
 
       <h3>Color Palette</h3>
       <ul>
-        <li>Primary: #4CAF50 (fresh, uplifting green)</li>
-        <li>Secondary: #f5f5f5 (light neutral background)</li>
-        <li>Accent: #333 (text color)</li>
+        <li>Primary: #4CAF50 – uplifting green</li>
+        <li>Secondary: #f5f5f5 – light background</li>
+        <li>Text Color: #333 – dark gray text</li>
       </ul>
 
       <h3>Typography</h3>
@@ -54,32 +60,62 @@
     <section>
       <h2>Content</h2>
 
-      <h3>Page Content Overview</h3>
+      <h3>Examples of Actual Text & Imagery</h3>
+      <p>These examples represent what users will see on the site:</p>
+
       <ul>
-        <li>Daily motivational quote generator</li>
-        <li>Goal input field with Save button</li>
-        <li>Goal stored in localStorage until completed/cleared</li>
-        <li>“Mark Complete” button to confirm completion</li>
-        <li>Encouraging progress message after completion</li>
-        <li>Mood slider with dynamic encouragement text</li>
+        <li><strong>Sample Motivational Quotes:</strong>  
+          “You’ve got this!”  
+          “Small steps still move you forward.”</li>
+
+        <li><strong>Example Goal:</strong>  
+          “Finish my math homework.”</li>
+
+        <li><strong>Completion Message:</strong>  
+          “Goal completed! Great job!”</li>
+
+        <li><strong>Mood Slider Messages:</strong>  
+          Low mood: “You're stronger than you think.”  
+          Mid mood: “You're doing great — keep going.”  
+          High mood: “Love the energy!”</li>
       </ul>
 
-      <h3>LocalStorage Usage</h3>
+      <h3>Dynamic Elements & LocalStorage Explanation</h3>
       <p>
-        The site uses local storage to save the user's daily goal.
-        When the user enters a goal and saves it, it is stored in the browser so
-        that if they refresh the page or return later, the goal still appears.
-        When the goal is marked as complete, the stored goal is removed.
+        The goal tracker stores the user's daily goal in localStorage.  
+        When the user types a goal and clicks “Save Goal,” it is saved and restored when 
+        the page reloads.  
+        When the user marks the goal as completed, localStorage removes the saved goal.
       </p>
     </section>
 
     <!-- Wireframes -->
     <section>
       <h2>Wireframes</h2>
+      <p>
+        The wireframes below are simple text-based diagrams showing the layout of the site.
+      </p>
 
       <h3>Home Page</h3>
-      <p>(layout is approximate)</p>
-      <img src="https://wddbyui.github.io/wdd131/common/images/personal_site/home_wireframe.png" alt="Home page wireframe example" />
+      <pre style="background:#fff; padding:20px; border-radius:10px;">
+-------------------------------------
+|        Student Motivational Hub   |
+-------------------------------------
+|          Daily Quote             |
+|   [Quote text here]              |
+|   [New Quote Button]             |
+-------------------------------------
+|            Goal Tracker          |
+|  [Goal Input] [Save Goal]        |
+|  Saved Goal: ________            |
+|  [Mark Complete]                 |
+-------------------------------------
+|            Mood Slider           |
+|  [------slider------]            |
+|  Encouragement text              |
+-------------------------------------
+      </pre>
+
     </section>
 
   </main>
