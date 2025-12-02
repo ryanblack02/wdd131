@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Character Registration</title>
-  <link rel="stylesheet" href="register.css" />
-  <script src="register.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Card</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Swamp Beast Diplomat">
+  <meta property="og:description" content="A powerful character card created for WDD 131.">
+  <meta property="og:url" content="https://YOURUSERNAME.github.io/wdd131/charactercard">
+  <meta property="og:image" content="https://YOURIMAGEURL.com/swamp.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Swamp Beast Diplomat">
+  <meta name="twitter:description" content="A powerful character card created for WDD 131.">
+  <meta name="twitter:image" content="https://YOURIMAGEURL.com/swamp.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <h1>Character Registration</h1>
-  </header>
-  <main>
-    <section class="form-section">
-      <h2>Add Participant</h2>
-      <form id="registrationForm">
-        <label for="fname">First Name:</label>
-        <input type="text" id="fname" name="fname" required />
 
-        <label for="lname">Last Name:</label>
-        <input type="text" id="lname" name="lname" required />
+  <div class="card">
+    <img class="image" src="swampbeast.png" alt="Character Image">
 
-        <label for="level">Level:</label>
-        <select id="level" name="level" required>
-          <option value="">--Select Level--</option>
-          <option value="Beginner">Beginner</option>
-          <option value="Intermediate">Intermediate</option>
-          <option value="Advanced">Advanced</option>
-        </select>
+    <div class="name" id="charName"></div>
 
-        <button type="submit" id="submitBtn">Add Participant</button>
-      </form>
-    </section>
+    <div class="stats">
+      <p id="class"></p>
+      <p id="level"></p>
+      <p id="health"></p>
+    </div>
 
-    <section class="participants-section">
-      <h2>Registered Participants</h2>
-      <div id="participants"></div>
-    </section>
-  </main>
+    <div class="buttons">
+      <button id="attackBtn">Attack</button>
+      <button id="levelBtn">Level Up</button>
+    </div>
+  </div>
+
 </body>
 </html>
