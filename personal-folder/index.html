@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Motivation Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MotivaHub – Student Motivation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+  <!-- HEADER -->
   <header>
-    <h1>Motivation Dashboard</h1>
+    <h1>MotivaHub</h1>
     <nav>
-      <a href="index.html">Home</a> |
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
     </nav>
   </header>
 
-  <!-- FEATURE 1: Daily Motivational Quote -->
-  <section id="quote-section">
-    <h2>Daily Motivational Quote</h2>
-    <p id="quote">Loading quote...</p>
-    <button id="new-quote-btn">Get New Quote</button>
-  </section>
+  <main>
 
-  <!-- FEATURE 2: One-Sentence Goal Tracker (with Local Storage) -->
-  <section id="goal-section">
-    <h2>One-Sentence Goal Tracker</h2>
-    <input type="text" id="goal-input" placeholder="Write your goal for today...">
-    <button id="save-goal-btn">Save Goal</button>
+    <!-- QUOTE SECTION -->
+    <section id="quote-box">
+      <h2>Daily Motivation</h2>
+      <p id="quote">Click the button for motivation!</p>
+      <button id="quote-btn">New Quote</button>
+    </section>
 
-    <h3>Saved Goal:</h3>
-    <p id="saved-goal">No goal saved yet.</p>
-    <button id="clear-goal-btn">Clear Goal</button>
-  </section>
+    <!-- GOAL TRACKER -->
+    <section>
+      <h2>Goal Tracker</h2>
 
-  <!-- FEATURE 3: Mood Slider -->
-  <section id="mood-section">
-    <h2>Mood Slider</h2>
-    <label for="mood">How are you feeling today?</label>
-    <input type="range" id="mood" min="1" max="5" value="3">
-    <p id="mood-message">Slide to get a message!</p>
-  </section>
+      <div class="goal-container">
+        <input type="text" id="goal-input" placeholder="Enter your daily goal..." />
+        <button id="save-goal">Save Goal</button>
+
+        <p id="saved-goal"></p>
+        <button id="complete-goal" style="display:none;">Mark Complete</button>
+
+        <p id="goal-status"></p>
+      </div>
+    </section>
+
+    <!-- MOOD SLIDER -->
+    <section>
+      <h2>Mood Check</h2>
+      <p>How are you feeling today?</p>
+      <input type="range" min="1" max="10" value="5" id="mood-slider">
+      <p id="mood-message"></p>
+    </section>
+
+  </main>
 
   <footer>
-    <p>Motivation Dashboard &copy; 2025</p>
+    <p>© 2025 MotivaHub – Built for WDD 131 Final Project</p>
   </footer>
 
   <script src="script.js"></script>
