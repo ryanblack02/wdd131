@@ -3,13 +3,58 @@
 // -----------------------------------------------------
 
 // Array of quotes (used with map later)
-const quotes = [
+[
   "You’ve got this!",
   "Small steps still move you forward.",
+  "Believe in the student you’re becoming.",
   "Progress, not perfection.",
-  "Believe in the student you're becoming.",
-  "You are capable of amazing things."
-];
+  "You are capable of amazing things.",
+  "Little progress is still progress.",
+  "Trust the process — growth takes time.",
+  "Your future self is proud of you.",
+  "Consistency beats intensity.",
+  "One day at a time.",
+  "You’re doing better than you think.",
+  "Success is built on daily habits.",
+  "Your potential is endless.",
+  "Hard work pays off — stay with it.",
+  "You’re stronger than your doubts.",
+  "Every accomplishment starts with the decision to try.",
+  "Focus on progress, not speed.",
+  "Keep going — you’re almost there.",
+  "One small step today makes tomorrow easier.",
+  "Don’t give up — great things take time.",
+  "Believe in your ability to improve.",
+  "Start where you are. Use what you have. Do what you can.",
+  "Your only limit is your mindset.",
+  "Push yourself because no one else will do it for you.",
+  "You’re growing every day — keep going.",
+  "Your dreams are worth the effort.",
+  "Success is a series of small wins.",
+  "You’re capable of more than you know.",
+  "Don’t stop until you’re proud.",
+  "Focus on what you can control.",
+  "You don’t need to be perfect to be amazing.",
+  "Show up even when it’s hard.",
+  "You can do hard things.",
+  "Today is a great day to try.",
+  "Your best is enough.",
+  "If you get tired, learn to rest — not quit.",
+  "Failing isn’t the opposite of success; it’s part of it.",
+  "Effort is never wasted.",
+  "You’re making progress even when it feels slow.",
+  "Your goals are possible — keep working.",
+  "Keep believing in yourself.",
+  "Small habits lead to big results.",
+  "Stay positive. Work hard. Make it happen.",
+  "Choose progress over excuses.",
+  "Every step gets you closer.",
+  "Don’t be afraid to start again.",
+  "Learn, grow, improve — repeat.",
+  "Give yourself credit for how far you’ve come.",
+  "Keep that momentum going — you’re doing great."
+]
+
 
 // Function: get random quote
 function getRandomQuote() {
