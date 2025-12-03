@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivation Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Motivation Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- FEATURE 1: Daily Motivational Quote -->
+  <section id="quote-section">
+    <h2>Daily Motivational Quote</h2>
+    <p id="quote">Loading quote...</p>
+    <button id="new-quote-btn">Get New Quote</button>
+  </section>
+
+  <!-- FEATURE 2: One-Sentence Goal Tracker (with Local Storage) -->
+  <section id="goal-section">
+    <h2>One-Sentence Goal Tracker</h2>
+    <input type="text" id="goal-input" placeholder="Write your goal for today...">
+    <button id="save-goal-btn">Save Goal</button>
+
+    <h3>Saved Goal:</h3>
+    <p id="saved-goal">No goal saved yet.</p>
+    <button id="clear-goal-btn">Clear Goal</button>
+  </section>
+
+  <!-- FEATURE 3: Mood Slider -->
+  <section id="mood-section">
+    <h2>Mood Slider</h2>
+    <label for="mood">How are you feeling today?</label>
+    <input type="range" id="mood" min="1" max="5" value="3">
+    <p id="mood-message">Slide to get a message!</p>
+  </section>
+
+  <footer>
+    <p>Motivation Dashboard &copy; 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
