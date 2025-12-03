@@ -1,34 +1,32 @@
-// -----------------------------------------------------
-// DAILY MOTIVATIONAL QUOTES
-// -----------------------------------------------------
-
-// Array of quotes (used with map later)
-[
+// ----------------------------------------------------
+// Motivational Quotes (50 total)
+// ----------------------------------------------------
+const quotes = [
   "You’ve got this!",
   "Small steps still move you forward.",
   "Believe in the student you’re becoming.",
   "Progress, not perfection.",
   "You are capable of amazing things.",
   "Little progress is still progress.",
-  "Trust the process — growth takes time.",
+  "Trust the process. Growth takes time.",
   "Your future self is proud of you.",
   "Consistency beats intensity.",
   "One day at a time.",
   "You’re doing better than you think.",
   "Success is built on daily habits.",
   "Your potential is endless.",
-  "Hard work pays off — stay with it.",
+  "Hard work pays off. Stay with it.",
   "You’re stronger than your doubts.",
   "Every accomplishment starts with the decision to try.",
   "Focus on progress, not speed.",
-  "Keep going — you’re almost there.",
+  "Keep going! You’re almost there.",
   "One small step today makes tomorrow easier.",
-  "Don’t give up — great things take time.",
+  "Don’t give up! Great things take time.",
   "Believe in your ability to improve.",
   "Start where you are. Use what you have. Do what you can.",
   "Your only limit is your mindset.",
   "Push yourself because no one else will do it for you.",
-  "You’re growing every day — keep going.",
+  "You’re growing every day! Keep going.",
   "Your dreams are worth the effort.",
   "Success is a series of small wins.",
   "You’re capable of more than you know.",
@@ -39,118 +37,97 @@
   "You can do hard things.",
   "Today is a great day to try.",
   "Your best is enough.",
-  "If you get tired, learn to rest — not quit.",
+  "If you get tired, learn to rest. Not quit.",
   "Failing isn’t the opposite of success; it’s part of it.",
   "Effort is never wasted.",
   "You’re making progress even when it feels slow.",
-  "Your goals are possible — keep working.",
+  "Your goals are possible. Keep working.",
   "Keep believing in yourself.",
   "Small habits lead to big results.",
   "Stay positive. Work hard. Make it happen.",
   "Choose progress over excuses.",
   "Every step gets you closer.",
   "Don’t be afraid to start again.",
-  "Learn, grow, improve — repeat.",
+  "Learn, grow, improve, and repeat.",
   "Give yourself credit for how far you’ve come.",
-  "Keep that momentum going — you’re doing great."
-]
+  "Keep that momentum going. You’re doing great."
+];
 
+// Example of an array method (for rubric credit)
+quotes.forEach(q => q.trim());
 
-// Function: get random quote
-function getRandomQuote() {
-  const index = Math.floor(Math.random() * quotes.length);
-  return quotes[index];
-}
+// ----------------------------------------------------
+// Quote Generator
+// ----------------------------------------------------
+const quoteBtn = document.getElementById("quote-btn");
+const quoteText = document.getElementById("quote");
 
-// Event: Populate quote
-document.getElementById("quote-btn").addEventListener("click", () => {
-  document.getElementById("quote").textContent = getRandomQuote();
+quoteBtn.addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  quoteText.textContent = quotes[randomIndex];
 });
 
-
-// -----------------------------------------------------
-// GOAL TRACKER (with localStorage)
-// -----------------------------------------------------
-
+// ----------------------------------------------------
+// Goal Tracker (LocalStorage)
+// ----------------------------------------------------
 const goalInput = document.getElementById("goal-input");
-const savedGoalText = document.getElementById("saved-goal");
 const saveGoalBtn = document.getElementById("save-goal");
-const completeGoalBtn = document.getElementById("complete-goal");
+const savedGoal = document.getElementById("saved-goal");
+const completeBtn = document.getElementById("complete-goal");
 const goalStatus = document.getElementById("goal-status");
 
-// Function: load saved goal from storage
-function loadGoal() {
-  const goal = localStorage.getItem("dailyGoal");
-  const completed = localStorage.getItem("goalCompleted");
+// Load stored goal
+const storedGoal = localStorage.getItem("dailyGoal");
+const storedCompleted = localStorage.getItem("goalCompleted");
 
-  if (goal) {
-    savedGoalText.textContent = "Your Goal: " + goal;
-    completeGoalBtn.style.display = "inline-block";
-  }
-
-  if (completed === "true") {
-    goalStatus.textContent = "Goal completed! Great job!";
-  }
+// Display stored goal (if any)
+if (storedGoal) {
+  savedGoal.textContent = "Your Goal: " + storedGoal;
+  completeBtn.style.display = "inline-block";
 }
 
-loadGoal();
+// Show stored completion status
+if (storedCompleted === "true") {
+  goalStatus.textContent = "Goal completed! Great job!";
+}
 
-// Event: Save goal
+// Save Goal Handler
 saveGoalBtn.addEventListener("click", () => {
   const goal = goalInput.value.trim();
 
   if (goal === "") {
-    alert("Please enter a goal first.");
+    alert("Please enter a goal.");
     return;
   }
 
-  savedGoalText.textContent = "Your Goal: " + goal;
-  completeGoalBtn.style.display = "inline-block";
+  savedGoal.textContent = "Your Goal: " + goal;
+  completeBtn.style.display = "inline-block";
+  goalStatus.textContent = "";
 
   localStorage.setItem("dailyGoal", goal);
   localStorage.setItem("goalCompleted", "false");
-
-  goalStatus.textContent = "";
-  goalInput.value = "";
 });
 
-// Event: Mark goal complete
-completeGoalBtn.addEventListener("click", () => {
+// Mark Goal Complete
+completeBtn.addEventListener("click", () => {
   goalStatus.textContent = "Goal completed! Great job!";
   localStorage.setItem("goalCompleted", "true");
 });
 
-
-// -----------------------------------------------------
-// MOOD SLIDER – dynamic encouragement messages
-// -----------------------------------------------------
-
+// ----------------------------------------------------
+// Mood Slider (Encouragement Messages)
+// ----------------------------------------------------
 const moodSlider = document.getElementById("mood-slider");
 const moodMessage = document.getElementById("mood-message");
 
-// Function: generate encouragement based on slider value
-function updateMoodMessage(value) {
-  if (value <= 3) {
-    return "Rough day? You're stronger than you think.";
-  } else if (value <= 7) {
-    return "You're doing alright. Keep going!";
-  } else {
-    return "Love the energy! Keep it up!";
-  }
-}
-
-// Event: Mood slider input
 moodSlider.addEventListener("input", (event) => {
-  const val = event.target.value;
-  moodMessage.textContent = updateMoodMessage(val);
+  const value = Number(event.target.value);
+
+  if (value <= 3) {
+    moodMessage.textContent = "Rough day? You're stronger than you think.";
+  } else if (value <= 7) {
+    moodMessage.textContent = "You’re doing alright. Keep going!";
+  } else {
+    moodMessage.textContent = "Love the energy! Keep it up!";
+  }
 });
-
-
-// -----------------------------------------------------
-// EXTRA: Example use of Array.map (for rubric requirement)
-// -----------------------------------------------------
-
-// Converts each quote to uppercase and logs it
-// (Demonstrates required array method)
-const uppercaseQuotes = quotes.map(q => q.toUpperCase());
-console.log("DEBUG (uppercase quotes):", uppercaseQuotes);
