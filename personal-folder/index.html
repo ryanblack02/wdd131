@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MotivaHub – Student Motivation</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -23,23 +28,20 @@
 
     <!-- QUOTE SECTION -->
     <section id="quote-box">
-    <h2>Daily Motivation</h2>
-    <img src="images/Motivation.png" alt="Motivation" style="width:100%; max-width:200px; margin-bottom:15px; border-radius:12px;">
-    <p id="quote">Click the button for motivation!</p>
-    <button id="quote-btn">New Quote</button>
+      <h2>Daily Motivation</h2>
+      <img src="images/Motivation.webp" alt="Motivation" style="width:100%; max-width:400px; margin-bottom:15px; border-radius:12px;" loading="lazy">
+      <p id="quote">Click the button for motivation!</p>
+      <button id="quote-btn">New Quote</button>
     </section>
 
     <!-- GOAL TRACKER -->
     <section>
       <h2>Goal Tracker</h2>
-
       <div class="goal-container">
         <input type="text" id="goal-input" placeholder="Enter your daily goal..." />
         <button id="save-goal">Save Goal</button>
-
         <p id="saved-goal"></p>
         <button id="complete-goal" style="display:none;">Mark Complete</button>
-
         <p id="goal-status"></p>
       </div>
     </section>
@@ -58,6 +60,6 @@
     <p>© 2025 MotivaHub – Built for WDD 131 Final Project</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
