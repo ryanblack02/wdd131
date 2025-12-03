@@ -97,18 +97,20 @@ button:hover {
 
 #quote-box {
   text-align: center;
-  background: url('images/Motivation.png') no-repeat center/cover;
-  color: white; /* if needed for contrast */
-  padding: 40px 25px;
+  background: var(--white); /* Matches other sections */
+  padding: 25px;             /* Keep spacing consistent */
   border-radius: 12px;
+  box-shadow: var(--shadow);
 }
 
+/* Keep the quote styling as is */
 #quote {
   margin: 15px 0;
   font-size: 1.2rem;
   font-style: italic;
-  color: #333;
+  color: #333; /* Dark text for readability */
 }
+
 
 /* ------------------------------
    GOAL TRACKER
