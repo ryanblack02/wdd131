@@ -97,18 +97,17 @@ button:hover {
 
 #quote-box {
   text-align: center;
-  background: var(--white); /* Matches other sections */
-  padding: 25px;             /* Keep spacing consistent */
+  background: var(--white);  /* same as other sections */
+  padding: 25px;             /* consistent spacing */
   border-radius: 12px;
   box-shadow: var(--shadow);
 }
 
-/* Keep the quote styling as is */
 #quote {
   margin: 15px 0;
   font-size: 1.2rem;
   font-style: italic;
-  color: #333; /* Dark text for readability */
+  color: #333;
 }
 
 
