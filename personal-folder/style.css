@@ -107,10 +107,14 @@ button:hover {
 }
 
 /* ------------------------------
-   GOAL TRACKER
+   CHECK-IN CARD
 ------------------------------ */
 
-.goal-container input[type="text"] {
+#checkin-card {
+  text-align: center;
+}
+
+.checkin-container input[type="text"] {
   width: 85%;
   padding: 10px;
   border: 2px solid var(--primary);
@@ -125,18 +129,37 @@ button:hover {
   color: var(--primary);
 }
 
-/* ------------------------------
-   MOOD SLIDER
------------------------------- */
-
 #mood-slider {
   width: 100%;
+  margin-top: 10px;
 }
 
 #mood-message {
   margin-top: 10px;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+/* ------------------------------
+   HISTORY
+------------------------------ */
+
+#history {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#history-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#history-list li {
+  background: #f0f0f0;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
 }
 
 /* ------------------------------
