@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ----------------------------------------------------
-  // Motivational Quotes (50 total)
-  // ----------------------------------------------------
+  // ------------------------------
+  // Motivational Quotes
+  // ------------------------------
   const quotes = [
     "You’ve got this!",
     "Small steps still move you forward.",
@@ -55,11 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "Keep that momentum going. You’re doing great."
   ];
 
-  quotes.forEach(q => q.trim());
-
-  // ----------------------------------------------------
-  // Quote Generator
-  // ----------------------------------------------------
   const quoteBtn = document.getElementById("quote-btn");
   const quoteText = document.getElementById("quote");
 
@@ -68,10 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
     quoteText.textContent = quotes[randomIndex];
   });
 
-
-  // ----------------------------------------------------
-  // DAILY GOAL + DAILY MOOD (UPGRADED SYSTEM)
-  // ----------------------------------------------------
+  // ------------------------------
+  // Daily Check-In System
+  // ------------------------------
   const goalInput = document.getElementById("goal-input");
   const saveGoalBtn = document.getElementById("save-goal");
   const savedGoal = document.getElementById("saved-goal");
@@ -81,58 +75,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const moodSlider = document.getElementById("mood-slider");
   const moodMessage = document.getElementById("mood-message");
 
-  // Date Key
+  const historyList = document.getElementById("history-list");
+
+  // ------------------------------
+  // Helper: Date Key
+  // ------------------------------
   function getTodayKey() {
     return new Date().toISOString().split("T")[0];
   }
 
-  const dateKey = getTodayKey();
-  const goalKey = `dailyGoal-${dateKey}`;
-  const completedKey = `goalCompleted-${dateKey}`;
-  const moodKey = `mood-${dateKey}`;
-
-  // Load Saved Data
-  const storedGoal = localStorage.getItem(goalKey);
-  const storedCompleted = localStorage.getItem(completedKey);
-  const storedMood = localStorage.getItem(moodKey);
-
-  if (storedGoal) {
-    savedGoal.textContent = "Your Goal: " + storedGoal;
-    completeBtn.style.display = "inline-block";
+  function loadEntry(dateKey) {
+    const entryJSON = localStorage.getItem(`entry-${dateKey}`);
+    return entryJSON ? JSON.parse(entryJSON) : null;
   }
 
-  if (storedCompleted === "true") {
-    goalStatus.textContent = "Goal completed! Great job!";
+  function saveEntry(dateKey, goal, completed, mood) {
+    const entry = { date: dateKey, goal, completed, mood };
+    localStorage.setItem(`entry-${dateKey}`, JSON.stringify(entry));
   }
 
-  if (storedMood) {
-    moodSlider.value = storedMood;
-    updateMoodMessage(storedMood);
-  }
-
-  // Save Goal
-  saveGoalBtn.addEventListener("click", () => {
-    const goal = goalInput.value.trim();
-    if (!goal) {
-      alert("Please enter a goal.");
-      return;
-    }
-
-    savedGoal.textContent = "Your Goal: " + goal;
-    completeBtn.style.display = "inline-block";
-    goalStatus.textContent = "";
-
-    localStorage.setItem(goalKey, goal);
-    localStorage.setItem(completedKey, "false");
-  });
-
-  // Complete Goal
-  completeBtn.addEventListener("click", () => {
-    goalStatus.textContent = "Goal completed! Great job!";
-    localStorage.setItem(completedKey, "true");
-  });
-
-  // Update Mood
   function updateMoodMessage(value) {
     value = Number(value);
     if (value <= 3) {
@@ -144,10 +105,89 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // ------------------------------
+  // Initialize Today
+  // ------------------------------
+  const todayKey = getTodayKey();
+  const todayEntry = loadEntry(todayKey);
+
+  if (todayEntry) {
+    savedGoal.textContent = "Your Goal: " + todayEntry.goal;
+    completeBtn.style.display = "inline-block";
+    goalStatus.textContent = todayEntry.completed ? "Goal completed! Great job!" : "";
+    moodSlider.value = todayEntry.mood;
+    updateMoodMessage(todayEntry.mood);
+  }
+
+  // ------------------------------
+  // Save Goal
+  // ------------------------------
+  saveGoalBtn.addEventListener("click", () => {
+    const goal = goalInput.value.trim();
+    if (!goal) {
+      alert("Please enter a goal.");
+      return;
+    }
+    savedGoal.textContent = "Your Goal: " + goal;
+    completeBtn.style.display = "inline-block";
+    goalStatus.textContent = "";
+    saveEntry(todayKey, goal, false, moodSlider.value);
+    renderHistory();
+  });
+
+  // ------------------------------
+  // Complete Goal
+  // ------------------------------
+  completeBtn.addEventListener("click", () => {
+    const current = loadEntry(todayKey);
+    if (current) {
+      current.completed = true;
+      saveEntry(todayKey, current.goal, true, current.mood);
+      goalStatus.textContent = "Goal completed! Great job!";
+      renderHistory();
+    }
+  });
+
+  // ------------------------------
+  // Update Mood
+  // ------------------------------
   moodSlider.addEventListener("input", (event) => {
     const value = event.target.value;
     updateMoodMessage(value);
-    localStorage.setItem(moodKey, value);
+
+    const current = loadEntry(todayKey);
+    if (current) {
+      current.mood = value;
+      saveEntry(todayKey, current.goal, current.completed, current.mood);
+      renderHistory();
+    }
   });
 
-}); // END DOMContentLoaded
+  // ------------------------------
+  // Render History
+  // ------------------------------
+  function renderHistory() {
+    const entries = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith("entry-")) {
+        const entry = JSON.parse(localStorage.getItem(key));
+        entries.push(entry);
+      }
+    }
+
+    // Sort by date descending
+    entries.sort((a, b) => b.date.localeCompare(a.date));
+
+    // Display in list
+    historyList.innerHTML = "";
+    entries.forEach(e => {
+      const li = document.createElement("li");
+      li.textContent = `${e.date} — Goal: "${e.goal}" | Completed: ${e.completed ? "✅" : "❌"} | Mood: ${e.mood}/10`;
+      historyList.appendChild(li);
+    });
+  }
+
+  renderHistory();
+
+});
