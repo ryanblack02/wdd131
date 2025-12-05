@@ -21,35 +21,40 @@
 
   <main>
 
+    <!-- DAILY CHECK-IN (Mood + Goal) -->
+    <section id="checkin-card">
+      <h2>Daily Check-In</h2>
+
+      <div class="checkin-container">
+
+        <!-- Goal Input -->
+        <input type="text" id="goal-input" placeholder="Enter your daily goal..." />
+        <button id="save-goal">Save Goal</button>
+
+        <p id="saved-goal"></p>
+        <button id="complete-goal" style="display:none;">Mark Complete</button>
+        <p id="goal-status"></p>
+
+        <!-- Mood Slider -->
+        <p>How are you feeling today?</p>
+        <input type="range" min="1" max="10" value="5" id="mood-slider">
+        <p id="mood-message"></p>
+
+      </div>
+
+      <!-- History List -->
+      <div id="history">
+        <h3>Previous Entries</h3>
+        <ul id="history-list"></ul>
+      </div>
+    </section>
+
     <!-- QUOTE SECTION -->
     <section id="quote-box">
       <img src="images/Motivation.png" alt="Motivation" style="width:100%; max-width:200px; margin-bottom:15px; border-radius:12px;">
       <h2>Daily Motivation</h2>
       <p id="quote">Click the button for motivation!</p>
       <button id="quote-btn">New Quote</button>
-    </section>
-
-    <!-- GOAL TRACKER -->
-    <section>
-      <h2>Goal Tracker</h2>
-
-      <div class="goal-container">
-        <input type="text" id="goal-input" placeholder="Enter your daily goal..." />
-        <button id="save-goal">Save Goal</button>
-
-        <p id="saved-goal"></p>
-        <button id="complete-goal" style="display:none;">Mark Complete</button>
-
-        <p id="goal-status"></p>
-      </div>
-    </section>
-
-    <!-- MOOD SLIDER -->
-    <section>
-      <h2>Mood Check</h2>
-      <p>How are you feeling today?</p>
-      <input type="range" min="1" max="10" value="5" id="mood-slider">
-      <p id="mood-message"></p>
     </section>
 
   </main>
