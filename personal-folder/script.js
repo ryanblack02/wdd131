@@ -67,35 +67,55 @@ quoteBtn.addEventListener("click", () => {
   quoteText.textContent = quotes[randomIndex];
 });
 
+
 // ----------------------------------------------------
-// Goal Tracker (LocalStorage)
+// DAILY GOAL + DAILY MOOD (UPGRADED SYSTEM)
 // ----------------------------------------------------
+
+// Elements
 const goalInput = document.getElementById("goal-input");
 const saveGoalBtn = document.getElementById("save-goal");
 const savedGoal = document.getElementById("saved-goal");
 const completeBtn = document.getElementById("complete-goal");
 const goalStatus = document.getElementById("goal-status");
 
-// Load stored goal
-const storedGoal = localStorage.getItem("dailyGoal");
-const storedCompleted = localStorage.getItem("goalCompleted");
+const moodSlider = document.getElementById("mood-slider");
+const moodMessage = document.getElementById("mood-message");
 
-// Display stored goal (if any)
+// Date Helper
+function getTodayKey() {
+  const today = new Date().toISOString().split("T")[0];
+  return today; // "2025-12-05"
+}
+
+const dateKey = getTodayKey();
+const goalKey = `dailyGoal-${dateKey}`;
+const completedKey = `goalCompleted-${dateKey}`;
+const moodKey = `mood-${dateKey}`;
+
+// Load Today's Data
+const storedGoal = localStorage.getItem(goalKey);
+const storedCompleted = localStorage.getItem(completedKey);
+const storedMood = localStorage.getItem(moodKey);
+
 if (storedGoal) {
   savedGoal.textContent = "Your Goal: " + storedGoal;
   completeBtn.style.display = "inline-block";
 }
 
-// Show stored completion status
 if (storedCompleted === "true") {
   goalStatus.textContent = "Goal completed! Great job!";
 }
 
-// Save Goal Handler
+if (storedMood) {
+  moodSlider.value = storedMood;
+  updateMoodMessage(storedMood);
+}
+
+// Save Goal
 saveGoalBtn.addEventListener("click", () => {
   const goal = goalInput.value.trim();
-
-  if (goal === "") {
+  if (!goal) {
     alert("Please enter a goal.");
     return;
   }
@@ -104,25 +124,19 @@ saveGoalBtn.addEventListener("click", () => {
   completeBtn.style.display = "inline-block";
   goalStatus.textContent = "";
 
-  localStorage.setItem("dailyGoal", goal);
-  localStorage.setItem("goalCompleted", "false");
+  localStorage.setItem(goalKey, goal);
+  localStorage.setItem(completedKey, "false");
 });
 
 // Mark Goal Complete
 completeBtn.addEventListener("click", () => {
   goalStatus.textContent = "Goal completed! Great job!";
-  localStorage.setItem("goalCompleted", "true");
+  localStorage.setItem(completedKey, "true");
 });
 
-// ----------------------------------------------------
-// Mood Slider (Encouragement Messages)
-// ----------------------------------------------------
-const moodSlider = document.getElementById("mood-slider");
-const moodMessage = document.getElementById("mood-message");
-
-moodSlider.addEventListener("input", (event) => {
-  const value = Number(event.target.value);
-
+// Mood Slider (Saved Daily)
+function updateMoodMessage(value) {
+  value = Number(value);
   if (value <= 3) {
     moodMessage.textContent = "Rough day? You're stronger than you think.";
   } else if (value <= 7) {
@@ -130,4 +144,10 @@ moodSlider.addEventListener("input", (event) => {
   } else {
     moodMessage.textContent = "Love the energy! Keep it up!";
   }
+}
+
+moodSlider.addEventListener("input", (event) => {
+  const value = event.target.value;
+  updateMoodMessage(value);
+  localStorage.setItem(moodKey, value);
 });
